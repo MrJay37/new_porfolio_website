@@ -1,14 +1,13 @@
 import Head from 'next/head'
-import Banner from '../components/banner'
+import Home from './home'
 
-export default function Home() {
+export default function App() {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Create Next App</title>
         <link rel="icon" href="/images/Icon.png" />
       </Head>
-      <Banner />
+      <Home />
     </div>
   )
 }

@@ -1,0 +1,169 @@
+.skills_graph{
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (max-width: 600px) {
+        width: 90%;
+    }
+
+    dl{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+  
+    .title {
+        margin: 0 0 20px 0;
+        width: 100%;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        font-size: 6rem;
+
+        @media (max-width: 600px) {
+            font-size: 2rem;
+        }
+    }
+
+    .skills_graph_container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+    
+        
+        .entry{
+            display: flex;
+            flex-direction: column-reverse;
+            @media (max-width: 600px) {
+                flex-direction: row;
+            }
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+    
+            .label {
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 130px;
+                font-size: 1.5rem;
+                @media (max-width: 600px) {
+                    font-size: 1rem;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+              }
+            
+            .barContainer{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                height: 40rem;
+                max-height: 100vh;
+                border-top: 1px solid white;
+                background: repeating-linear-gradient(
+                    to top,
+                    #ddd,
+                    #ddd 1px,
+                    black 1px,
+                    black 10%
+                );
+    
+                @media (max-width: 600px) {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 40px;
+                    border-top: none;
+                    border-right: 1px solid white;
+                    background: repeating-linear-gradient(
+                        to right,
+                        #ddd,
+                        #ddd 1px,
+                        black 1px,
+                        black 20%
+                    );
+                }
+    
+                @keyframes widthRise{
+                    from {
+                        height: 0%;
+                    }
+                    to {
+                        height: --final-width
+                    }
+                }
+                
+                .percentage {
+                    background-color: #FFD700;
+                    --final-width: 0%;
+                    filter: opacity(75%);
+                    width: 35%;
+                    border-radius: 10px 10px 0 0;
+
+                    // transition: width 1s ease;
+                }
+    
+                @for $i from 1 through 100 {
+                    $value: ($i * 1%);
+                    
+                    .percentage-#{$i} { 
+                        --final-width: $value;
+                        height: $value;
+                        animation: widthRise 1s ease;
+                    }
+    
+                }
+
+                @media (max-width: 600px) {
+                    @keyframes widthRise{
+                        from {
+                            width: 0%;
+                        }
+                        to {
+                            width: --final-width
+                        }
+                    }
+                    
+                    .percentage {
+                        background-color: #FFD700;
+                        --final-width: 0%;
+                        filter: opacity(75%);
+                        height: 75%;
+                        border-radius: 0 5px 5px 0px;
+    
+                        // transition: width 1s ease;
+                    }
+        
+                    @for $i from 1 through 100 {
+                        $value: ($i * 1%);
+                        
+                        .percentage-#{$i} { 
+                            --final-width: $value;
+                            width: $value;
+                            animation: widthRise 1s ease;
+                        }
+        
+                    }
+                }
+    
+            }
+        }
+    }    
+}
+  
+  

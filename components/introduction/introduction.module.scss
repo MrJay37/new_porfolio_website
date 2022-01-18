@@ -1,0 +1,60 @@
+.container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (max-width: 600px) {
+        width: 90%;
+    }
+
+    .title {
+        margin: 50px 0 20px 0;
+        width: 100%;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        font-size: 6rem;
+
+        @media (max-width: 600px) {
+            margin: 30px 0 20px 0;
+            font-size: 2rem;
+        }
+    }
+
+    .introBox{
+        display: flex;
+        width: 100%;
+
+        @media (max-width: 600px) {
+            flex-direction: column-reverse;
+        }
+
+        .text{
+            font-size: 1.5rem;
+            padding: 0 30px 0 0;
+            text-align: justify;
+            @media (max-width: 600px) {
+                padding: 0;
+                font-size: 1rem;
+                
+            }
+        }
+
+        .profilePicture {
+            height: 400px;
+            width: auto;
+            border-radius: 50px;
+
+            @media (max-width: 600px) {
+                margin: 0 auto;
+                border-radius: 25px;
+                width: 80%;
+                height: auto
+            }
+        }
+    }
+
+}
+  
+  

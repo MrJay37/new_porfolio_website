@@ -5,13 +5,16 @@ export default function Banner() {
         <div className={BannerStyles.container}>
             <img 
                 className={BannerStyles.bannerPic}
-                src='images/Background.png'
-            
+                src='images/banPic.png'
             />
+
             <div className={BannerStyles.bannerText}>
-                Hi, I'm Sanket
-                <br />
-                I make music and software
+                <h1 className={BannerStyles.bannerHeading}>
+                    Hi, I'm Sanket
+                </h1>
+                <h2 className={BannerStyles.bannerSubHeading}>
+                    I make music and software
+                </h2>
             </div>
         </div>
     </>
