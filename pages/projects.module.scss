@@ -1,0 +1,139 @@
+.container{
+    width: 80%;
+    max-width: 1280px;
+    margin: 80px auto;
+
+    @media (max-width: 600px) {
+        margin: 50px auto;
+    }
+
+    .title{
+        margin: 50px 0 20px 0;
+        width: 100%;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        font-size: 6rem;
+
+        @media (max-width: 600px) {
+            margin: 30px 0 20px 0;
+            font-size: 2rem;
+        }
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 50px;
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+
+        .project_left{
+            position: relative;
+            min-height: 10vw;
+            max-height: 10vw;
+            border: #FFD700 solid 1px;
+            border-radius: 1em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            text-align: center;
+            transition: all 0.2s ease;
+            @media (max-width: 600px) {
+                position: relative;
+                flex-direction: row;
+                min-height: 10vh;
+                border-radius: 0.5em;
+            }
+
+            &:hover{
+                color: white;
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+
+            .projectTitle{
+                width: 100%;
+                font-size: 2rem;
+                max-height: 30%;
+                min-height: 20%;
+                font-size: 100%;
+                z-index: 1;
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    font-size: 1rem;                                        
+                }
+            }
+
+            .projectPreviewPicture{
+                position: absolute;
+                object-fit: fill;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .project_right{
+            position: relative;
+            min-height: 10vw;
+            max-height: 10vw;
+            border: #FFD700 solid 1px;
+            border-radius: 1em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            text-align: center;
+            transition: all 0.2s ease;
+            @media (max-width: 600px) {
+                flex-direction: row;
+                min-height: 10vh;
+                max-height: 10vh;
+                border-radius: 0.5em;
+            }
+
+            &:hover{
+                color: white;
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+
+            .projectTitle{
+                width: 100%;
+                font-size: 2rem;
+                max-height: 30%;
+                min-height: 20%;
+                font-size: 100%;
+                z-index: 1;
+                
+                @media (max-width: 600px) {
+                    width: 100%;
+                    font-size: 1rem;                           
+                }
+            }
+
+            .projectPreviewPicture{
+                position: absolute;
+                object-fit: fill;
+                width: 100%;
+                height: 100%;
+
+                &:hover{
+                    filter: brightness(50%);
+                }
+            }
+        }
+    }
+}

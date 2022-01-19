@@ -1,10 +1,11 @@
 .container{
-    margin: auto;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     width: 100%;
 
     @media (max-width: 600px) {
+        margin: 20px auto;
         width: 90%;
     }
 
@@ -25,30 +26,53 @@
     .projectCards{
         display: flex;
         justify-content: space-evenly;
+        margin: 40px auto;
         width: 100%;
         height: 100%;
 
         @media (max-width: 600px) {
+            margin: 10px auto;
             flex-direction: column;            
         }
 
         .projectCard{
-            background-color: #FFD700;
+            border: #FFD700 solid 2.5px;
             padding: 0 10px;
             height: 200px;
             width: 25%;
+            color: white;
             max-width: 350px;
             border-radius: 50px;
+            display: flex;
+            align-items: center;
+
+            transition: all 0.2s ease;
+            
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(255, 215, 0, 1);
+                transform: scale(1.05);
+                
+                color: black;
+            }
 
             @media (max-width: 600px) {
                 width: 100%;
                 height: 25%;
                 margin: 10px 0;
             }
+            justify-content: center;
             
             h3{
-                color: black;
+                
                 text-align: center;
+                filter: brightness(100%);
+                font-size: 1.5em;
+
+                @media (max-width: 600px) {
+                    font-size: 1em;
+                }
             }
         }
     }
@@ -56,6 +80,17 @@
     a{
         margin: 35px 50px 0 0;
         align-self: flex-end;
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            margin: 35px 10px 0 0;
+        }
     }
 
 }

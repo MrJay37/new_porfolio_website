@@ -6,13 +6,16 @@ import styles from './layout.module.scss'
 
 export default function Layout({ children, home, title }) {
   return (
-    <div className={home ? styles.homeContainer : styles.container}>
+      <>
       <Head>
         <title>{title}</title>
+        <link rel="icon" href="/images/Icon.png" />
       </Head>
       <Header home/>
+      <div className={home ? styles.homeContainer : styles.container}>
       {children}
+      </div>
       <Footer home/>
-    </div>
+      </>
   )
 }

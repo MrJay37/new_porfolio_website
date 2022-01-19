@@ -3,6 +3,7 @@
     z-index: 2;
     width: 100%;
     position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
 
@@ -15,6 +16,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        &:hover{
+            cursor: pointer;
+        }
+        
         .logo {
             height: inherit;
             width: auto;

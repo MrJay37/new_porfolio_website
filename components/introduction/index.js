@@ -22,6 +22,8 @@ export default function Introduction () {
                     Season 3 of Covid is dull.
                     When will the new Shrek movie come out?
                     Do you give up on learning a new hobby if you're not immediately good at it or are you not normal?
+                    Drink water, ffs.
+                    My mom likes this website.
                 </p>
             </div>            
             <img
