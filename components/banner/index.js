@@ -5,7 +5,7 @@ export default function Banner() {
         <div className={BannerStyles.container}>
             <img 
                 className={BannerStyles.bannerPic}
-                src='images/banPic.png'
+                src='images/newBanPic.jpg'
             />
 
             <div className={BannerStyles.bannerText}>

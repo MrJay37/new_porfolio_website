@@ -1,0 +1,33 @@
+// Global variables
+$background-color: black;
+
+// Adding media size codes to variables to create media specific names for general values
+// fs - Full Screen
+// tb - Tablet
+// sp - SmartPhone
+
+// Heading 1
+$fs-heading-1-font-size: 96px;
+$tb-heading-1-font-size: 72px;
+$sp-heading-1-font-size: 48px;
+
+// Heading 2
+$fs-heading-2-font-size: 48px;
+$tb-heading-2-font-size: 36px;
+$sp-heading-2-font-size: 24px;
+
+// Heading 3
+$fs-heading-3-font-size: 48px;
+$tb-heading-3-font-size: 36px;
+$sp-heading-3-font-size: 24px;
+
+// Font Weights
+$font-weight-light: 100;
+$font-weight-normal: 400;
+$font-weight-heavy: 700;
+
+
+$fs-skills-graph-width: 100%;
+$tb-skills-graph-width: 100%;
+$sp-skills-graph-width: 100%;
+

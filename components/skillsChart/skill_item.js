@@ -1,37 +1,17 @@
-import { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import BarChartStyles from './barChart.module.scss'
 
-export default function SkillItem({ title, value, count }) {
-    const controls = useAnimation();
-    const { ref, inView } = useInView();
-
-    const [animated, setAnimated] = useState(false) 
-
-    useEffect(() => {
-        if (inView && !animated) {
-          controls.start('visible');
-          setAnimated(true)
-        }
-      }, [controls, inView]);
-
-    return <dd className="entry">
-        <span className='label'>
+export default function SkillItem({ title, value }) {
+    const barSteps = [...new Array((value * 100)/5).keys()]
+    
+    console.log(barSteps)
+    return <dd className={BarChartStyles.entry}>
+        <span className={BarChartStyles.label}>
             {title}
         </span>
-        <div className="barContainer">
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={{
-                'hidden': {'height': 0},
-                'visible': {'height': `${value*100}%`},
-            }}
-            transition={{ delay: count/10 }}
-            className={`percentage`}
-        />
-        </div>
-        
+        <div className={BarChartStyles.barContainer}>
+            <div className={BarChartStyles.barBeam}>
+                {barSteps.map((v, i) => <div key={i} className={BarChartStyles.barStep} />)}
+            </div>
+        </div>    
     </dd>
 }

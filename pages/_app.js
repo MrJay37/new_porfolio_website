@@ -1,5 +1,4 @@
 import '../styles/global.scss'
-import '../components/skillsChart/barChart.scss'
 import Head from 'next/head'
 
 

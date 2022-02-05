@@ -1,0 +1,284 @@
+@import "../../styles/utils.module.scss";
+
+
+.skills_graph{
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: $fs-skills-graph-width;
+
+    dl{
+        width: 100%; padding: 0; margin: 0;
+    }
+  
+    .title {
+        margin: 0 0 20px 0;
+        width: 100%;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    .skills_graph_container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;    
+        
+        .entry{
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+    
+            .label {
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 30px 0 0 0;
+                height: 40px;
+                width: 100%;
+                font-size: 1.5rem;
+            }
+            
+            .barContainer{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                height: 40rem;
+                max-height: 100vh;
+                border-top: 1px solid white;
+                
+                background: repeating-linear-gradient(
+                    to top,
+                    #ddd,
+                    #ddd 1px,
+                    black 1px,
+                    black 10%
+                );
+    
+                .barBeam{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    width: 35%;
+                    justify-content: flex-start;
+                    max-height: inherit;
+                    transition: all 0.2s ease;
+                    border-top-left-radius: 0.5em;
+                    border-top-right-radius: 0.5em;
+                    overflow: hidden;
+                    filter: brightness(75%);
+                    &:hover{
+                        filter: brightness(100%);
+                        cursor: pointer;
+                    }
+
+    
+                    .barStep {
+                        background-color: #FFD700;
+                        background: repeating-linear-gradient(
+                            to left top,
+                            #FFD700,
+                            #FFD700 20px,
+                            black 50%,
+                            black 50%
+                        );
+                        height: 1.996rem;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+
+@media (max-width: 1024px) {
+    .skills_graph{
+        width: $tb-skills-graph-width;
+        .title {
+            font-size: 2rem;
+        }
+    
+        .skills_graph_container{
+            flex-direction: column;        
+            
+            .entry{
+                flex-direction: row;
+        
+                .label {
+                    font-size: 1rem;
+                    width: 35%;
+                    padding: 0 0 0 0;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                  }
+                
+                .barContainer{
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 40px;
+                    border-top: none;
+                    border-right: 1px solid white;
+                    background: repeating-linear-gradient(
+                        to right,
+                        #ddd,
+                        #ddd 1px,
+                        black 1px,
+                        black 20%
+                    );
+                }
+            }
+        }
+    }    
+}
+
+@media (max-width: 480px) {
+    .skills_graph{
+        margin: 50px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: $sp-skills-graph-width;
+    
+        dl{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+      
+        .title {
+            margin: 0 0 20px 0;
+            width: 100%;
+            font-weight: 400;
+            display: block;
+            text-align: center;
+            font-size: 6rem;
+    
+            @media (max-width: 600px) {
+                font-size: 2rem;
+            }
+        }
+    
+        .skills_graph_container{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+    
+            @media (max-width: 600px) {
+                flex-direction: column;
+            }
+        
+            
+            .entry{
+                display: flex;
+                flex-direction: column-reverse;
+                @media (max-width: 600px) {
+                    flex-direction: row;
+                }
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+        
+                .label {
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 30px 0 0 0;
+                    height: 40px;
+                    width: 100%;
+                    font-size: 1.5rem;
+                    @media (max-width: 600px) {
+                        font-size: 1rem;
+                        width: 35%;
+                        padding: 0 0 0 0;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                    }
+                  }
+                
+                .barContainer{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 40rem;
+                    max-height: 100vh;
+                    border-top: 1px solid white;
+                    
+                    background: repeating-linear-gradient(
+                        to top,
+                        #ddd,
+                        #ddd 1px,
+                        black 1px,
+                        black 10%
+                    );
+        
+                    @media (max-width: 600px) {
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        width: 100%;
+                        height: 40px;
+                        border-top: none;
+                        border-right: 1px solid white;
+                        background: repeating-linear-gradient(
+                            to right,
+                            #ddd,
+                            #ddd 1px,
+                            black 1px,
+                            black 20%
+                        );
+                    }
+    
+    
+                    .barBeam{
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        width: 35%;
+                        justify-content: flex-start;
+                        max-height: inherit;
+                        transition: all 0.2s ease;
+                        border-top-left-radius: 0.5em;
+                        border-top-right-radius: 0.5em;
+                        overflow: hidden;
+                        filter: brightness(75%);
+                        &:hover{
+                            filter: brightness(100%);
+                            cursor: pointer;
+                        }
+    
+        
+                        .barStep {
+                            background-color: #FFD700;
+                            background: repeating-linear-gradient(
+                                to left top,
+                                #FFD700,
+                                #FFD700 20px,
+                                black 50%,
+                                black 50%
+                            );
+                            height: 1.996rem;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }    
+    }
+}
