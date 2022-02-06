@@ -1,0 +1,159 @@
+@import '../styles/utils.module.scss';
+
+.container{
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .title{
+        display: block;
+        margin: 0;
+        width: 100%;
+        font-size: $fs-heading-1-font-size;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .projects {
+        margin: 50px auto 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media (max-width: 1496px) {
+            grid-template-columns: 1fr 1fr;
+            
+        }
+        column-gap: 50px;
+        row-gap: 50px;
+        transition: all 1s ease;
+
+        .linkDiv{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            display: flex;
+        }   
+
+        .project{
+            height: 190px;
+            width: 375px;
+            border: $theme-secondary solid 1px;
+            border-radius: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            transition: all 0.2s ease;
+            overflow: hidden;
+
+            .projectPreviewPicture{
+                animation: backgroundBrightnessHigh 250ms;
+                animation-fill-mode: forwards;
+
+                @keyframes backgroundBrightnessHigh {
+                    from {
+                        filter: opacity(0.25);
+                    }
+                    
+                    to {
+                        filter: opacity(1);
+                    }
+                }
+            }
+        }
+
+        .projectHover{
+            height: 190px;
+            width: 375px;
+            border: $theme-secondary solid 1px;
+            border-radius: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            
+            .projectTitle{
+                margin: auto;
+                font-size: $fs-normal-text-font-size;
+                animation: textEntry 500ms;
+                animation-fill-mode: forwards;
+
+                @keyframes textEntry {
+                    from {
+                        color: transparent;
+                    }
+                    to {
+                        color: white;
+                    } 
+                }
+            }
+
+            .projectPreviewPicture{
+                animation: backgroundBrightnessLow 250ms;
+                animation-fill-mode: forwards;
+
+                @keyframes backgroundBrightnessLow {
+                    from {
+                        filter: opacity(1);
+                    }
+                    to {
+                        filter: opacity(0.25);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tb-max-width) {
+    .container{
+        width: 70%;
+
+        .title{
+            font-size: $tb-heading-1-font-size;
+        }
+        
+        .projects{
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+
+            .project{
+                height: 10vh;
+                max-height: 100px;
+                width: 100%;
+                border-radius: 0.5em;
+
+            }
+
+            .projectHover{
+                height: 10vh;
+                max-height: 100px;
+                width: 100%;
+                border-radius: 0.5em;
+                
+                .projectTitle{
+                    font-size: $tb-normal-text-font-size;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $sp-max-width) {
+    .container{
+        .title{
+            font-size: $sp-heading-1-font-size;
+        }
+
+        .projects{
+            .projectHover{
+                .projectTitle{
+                    font-size: $sp-normal-text-font-size;
+                }
+            }
+        }
+    }
+}

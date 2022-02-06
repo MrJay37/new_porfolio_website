@@ -1,0 +1,137 @@
+@import '../../styles/utils.module.scss';
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (max-width: 600px) {
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .title {
+        margin: 50px 0 20px 0;
+        width: 100%;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        font-size: $fs-heading-1-font-size;
+
+        transition: color 100ms ease-in;
+
+        &:hover{
+            color: $theme-secondary;
+            cursor: pointer;
+        }
+    }
+
+    .projectCards{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 40px auto;
+        width: 100%;
+        height: 100%;
+
+        .projectCard{
+            border: $theme-secondary solid 2.5px;
+            padding: 0 10px;
+            height: 200px;
+            width: 25%;
+            color: white;
+            max-width: 350px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+            justify-content: center;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(255, 215, 0, 1);
+                transform: scale(1.05);
+                color: black;
+            }
+            
+            h3{
+                text-align: center;
+                filter: brightness(100%);
+                font-size: $fs-normal-text-font-size;
+
+                @media (max-width: 600px) {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+    a{
+        margin: 35px 50px 0 0;
+        align-self: flex-end;
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            margin: 35px 10px 0 0;
+        }
+    }
+
+}
+
+@media (max-width: $tb-max-width) {
+    .container{
+        .title {
+            margin-top: 30px;
+            font-size: $tb-heading-1-font-size;
+        }
+    
+        .projectCards{
+            margin-top: 10px;
+            flex-direction: column;            
+            align-items: center;
+    
+            .projectCard{
+                height: 25%;
+                min-width: 80%;
+                border: $theme-secondary solid 2px;
+                border-radius: 5rem;
+                margin: 10px 0;
+                
+                h3{
+                    font-size: $tb-normal-text-font-size;
+                }
+            }
+        }
+    
+        a{
+            margin: 35px 10px 0 0;
+        }
+    
+    }    
+}
+
+@media (max-width: $sp-max-width) {
+    .container{
+        width: 90%;
+    
+        .title {
+            font-size: $sp-heading-1-font-size;
+        }
+    
+        .projectCards{        
+            .projectCard{       
+                border: $theme-secondary solid 1px;        
+                h3{
+                    font-weight: $font-weight-normal;
+                    font-size: $sp-normal-text-font-size;
+                }
+            }
+        }    
+    }
+}

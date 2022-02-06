@@ -22,11 +22,13 @@ export default function Projects() {
     const projects = sortProjects(all_projects).slice(0, 3)
     
     return <div className={ProjectStyles.container}>
-        <h1 className={ProjectStyles.title}>Projects</h1>
+        <Link href={'/engineering_projects'}>
+            <h1 className={ProjectStyles.title}>Engineering Projects</h1>
+        </Link>
         <div className={ProjectStyles.projectCards}>
             {projects.map(project => <ProjectCard key={project.id} {...project}/>)}
         </div>
-        <Link href={'/projects'}>
+        <Link href={'/engineering_projects'}>
             <a>View all →</a>
         </Link>
     </div>

@@ -1,20 +1,34 @@
-.container {
-  margin: auto;
-  width: 80%;
-}
-  
-  
-.homeContainer {
+@import '../styles/utils.module.scss';
+
+
+.appContainer{
   width: 100%;
+  margin: 0;
 
+  .container {
+    width: 80%;
+    min-height: calc(100vh - 160px);
+    margin: $fs-header-height auto 0;
+  }
+  
+  .homeContainer {
+    width: 100%;  
+  }
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: $tb-max-width) {
+  .appContainer{
+    .container {
+      margin-top: $tb-header-height;
+      min-height: calc(100vh - 120px);
+      width: 100%;      
+    }  
+  }
 }
 
-.backToHome {
-  margin: 3rem 0 0;
+@media (max-width: $sp-max-width) {
+  .appContainer{
+    .container {
+    }  
+  }
 }

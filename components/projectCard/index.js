@@ -18,7 +18,7 @@ export default function ProjectCard({ props }) {
             onMouseLeave={Hover}
         >
             
-            <Link href={`/projects/${props.id}`}>
+            <Link href={`/engineering_projects/${props.id}`}>
                 <div className={ProjectStyles.linkDiv}>
                     <Image
                             className={ProjectStyles.projectPreviewPicture}

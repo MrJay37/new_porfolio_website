@@ -2,7 +2,7 @@ import BarChartStyles from './barChart.module.scss'
 import skillsData from '../../static/skills_data'
 import SkillItem from './skill_item'
 
-export default function App() {
+export default function SkillsChart() {
    
   return (
       <div className={BarChartStyles.skills_graph}>

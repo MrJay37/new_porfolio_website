@@ -1,15 +1,18 @@
+@import '../../styles/utils.module.scss';
+
+
 .container{
-    height: 80px;
-    z-index: 2;
-    width: 100%;
     position: fixed;
     top: 0;
+    // Don't remove z index, header gets hidden behind banner otherwise
+    width: 100%;
+    z-index: 1;
+    height: $fs-header-height;
     display: flex;
     align-items: center;
-
-    @media (max-width: 600px) {
-        height: 50px;        
-    }
+    justify-content: space-between;
+    overflow: hidden;
+    transition: all 0.5s ease;
     
     .avatar {
         height: inherit;
@@ -23,42 +26,81 @@
         
         .logo {
             height: inherit;
-            width: auto;
             border-radius: 50%;
-            padding: 10px 15px 10px 30px;
-            @media (max-width: 600px) {
-                padding: 5px 15px 5px 10px;
-            }
-            
+            padding: 10px 15px 10px 30px;            
         }
 
         .labels {
-            height: inherit;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
             
             h1 {
                 margin: 0;
-                font-weight: 400;
                 padding: 0;
-                @media (max-width: 600px) {
-                    font-size: 1rem;
-                }
+                font-weight: $font-weight-normal;
             }
-
-            h2 {
-                margin: 0;
-                font-weight: 100;
-                padding: 0;
-                @media (max-width: 600px) {
-                    font-size: 0.75rem;
-                }
-            }
-
-
         }
     }
+
+    .navigationDrawerButton{
+        display: none;
+    }
+}
+
+
+.navigationDrawer{
+    display: none;
+}
+
+@media (max-width: $tb-max-width) {
+    .container{
+        height: $tb-header-height;
+        
+        .avatar {
+            .logo {
+                padding: 5px 15px 5px 10px;                
+            }
     
+            .labels {
+                h1 {
+                    font-size: $tb-normal-text-font-size;
+                }
+            }
+        }
+
+        .navigationDrawerButton{
+            display: block;
+        }
+
+        .navigationDrawer{
+            display: block;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: $theme-secondary;
+            filter: opacity(0.5);
+            height: 100vh;
+            width: 60%;
+            transition: width 1s ease-in-out;
+        }
+    }
+}
+
+@media (max-width: $sp-max-width) {
+    .container{
+        max-height: $sp-header-height;
+        height: $sp-header-height;
+        
+        .avatar {
+            .logo {
+                padding: 5px 15px 5px 10px;                
+            }
+    
+            .labels {
+                h1 {
+                    font-size: $sp-normal-text-font-size;
+                }
+            }
+        }        
+    }   
 }

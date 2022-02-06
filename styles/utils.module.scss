@@ -1,10 +1,25 @@
 // Global variables
 $background-color: black;
+$theme-secondary: #FFD700;
 
-// Adding media size codes to variables to create media specific names for general values
+$tb-max-width: 1024px;
+$sp-max-width: 480px;
+
+// Adding media size codes to variables 
+// to create media specific names for general values
 // fs - Full Screen
 // tb - Tablet
 // sp - SmartPhone
+
+// Header height
+$fs-header-height: 80px;
+$tb-header-height: 60px;
+$sp-header-height: 60px;
+
+// Footer height
+$fs-footer-height: 80px;
+$tb-footer-height: 60px;
+$sp-footer-height: 60px;
 
 // Heading 1
 $fs-heading-1-font-size: 96px;
@@ -17,9 +32,15 @@ $tb-heading-2-font-size: 36px;
 $sp-heading-2-font-size: 24px;
 
 // Heading 3
-$fs-heading-3-font-size: 48px;
-$tb-heading-3-font-size: 36px;
-$sp-heading-3-font-size: 24px;
+$fs-heading-3-font-size: 30px;
+$tb-heading-3-font-size: 25px;
+$sp-heading-3-font-size: 20px;
+
+// Heading 3
+$fs-normal-text-font-size: 24px;
+$tb-normal-text-font-size: 24px;
+$sp-normal-text-font-size: 16px;
+
 
 // Font Weights
 $font-weight-light: 100;
@@ -29,5 +50,11 @@ $font-weight-heavy: 700;
 
 $fs-skills-graph-width: 100%;
 $tb-skills-graph-width: 100%;
-$sp-skills-graph-width: 100%;
+$sp-skills-graph-width: 90%;
 
+
+
+// Container width
+$fs-page-container-width: 80%;
+$tb-page-container-width: 100%;
+$sp-page-container-width: 100%
