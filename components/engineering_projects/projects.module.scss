@@ -14,15 +14,14 @@
     .title {
         margin: 50px 0 20px 0;
         width: 100%;
-        font-weight: 400;
+        font-weight: $font-weight-normal;
         display: block;
         text-align: center;
         font-size: $fs-heading-1-font-size;
 
-        transition: color 100ms ease-in;
+        transition: all 100ms ease-in;
 
         &:hover{
-            color: $theme-secondary;
             cursor: pointer;
         }
     }

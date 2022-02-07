@@ -10,11 +10,25 @@ export default function WhereIHaveWorked() {
 
     const [drawer, setDrawer] = useState(drawer_obj)
 
-    console.log(drawer)
+    const updateDrawer = (work_ex_id) => {
+        const new_drawer = {...drawer}
+        new_drawer[work_ex_id] = !new_drawer[work_ex_id]
+        setDrawer(new_drawer)
+        return true
+    }
+
+    const formatToYearMonth = (date_obj) => {
+        if (date_obj === undefined || date_obj === null){
+            return 'Now'
+        }
+        const date_string = date_obj.toDateString()
+        
+        return date_string.split(' ')[3] + ' ' + date_string.split(' ')[1]
+    }
 
     return <div className={WorkExStyles.container}>
         <div className={WorkExStyles.title}>
-            Where I've Worked
+            Where I've Worked?
         </div>
         {workExperience.map((
             {
@@ -30,10 +44,7 @@ export default function WhereIHaveWorked() {
             <div key={i} className={WorkExStyles.workExCard}>
                 <div 
                     className={WorkExStyles.workExCardTitle}
-                    onClick={() => setDrawer({
-                        ...drawer,
-                        id: !drawer[id]
-                    })}
+                    onClick={() => updateDrawer(id)}
                 >
                     <div className={WorkExStyles.WorkExCardTitleText}>
                         <h1>
@@ -42,24 +53,26 @@ export default function WhereIHaveWorked() {
                         <h3>
                             {position}
                         </h3>
-                        <p>{location.state}, {location.country}</p>
+                        <p>
+                            {location.state}, {location.country}
+                        </p>
                     </div>
                     <div className={WorkExStyles.workExCardTitleDates}>
-                        <div>From: {start.toDateString()}</div>
-                        <div>To: {end === null? 'Now' : end.toDateString()}</div>
+                        <div>To {formatToYearMonth(end)}</div>
+                        <div>From {formatToYearMonth(start)}</div>
                     </div>
                 </div>
                 <div
                     className={WorkExStyles.workExDuties}
-                    style={{
-                        display: drawer ? 'none' : 'block'
-                    }}
+                    style={{maxHeight: drawer[id] ? '1000px' : '0'}}
                 >
-                    {duties.map((duty, i) => (
-                        <li key={i}>
-                          {duty}  
-                        </li>
-                    ))}
+                    <div className={WorkExStyles.workExDutiesList}>
+                        {duties.map((duty, i) => (
+                            <li key={i}>
+                                {duty}  
+                            </li>
+                        ))}
+                    </div>
                 </div>
             </div>
             ) 

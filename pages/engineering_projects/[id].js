@@ -1,8 +1,7 @@
 import Layout from '../../components/layout'
 import ProjectData from '../../static/projects_data'
 
-export async function  getStaticPaths() {
-    
+export async function getStaticPaths() {    
     const paths = ProjectData.map(project =>  { return {'params': {'id': project.id}}})
     return {
         paths,

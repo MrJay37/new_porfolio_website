@@ -1,4 +1,4 @@
-import ProjectStyles from '../../pages/projects.module.scss'
+import ProjectStyles from '../../pages/engineering_projects.module.scss'
 import Link from 'next/link'
 import { useState } from 'react/cjs/react.development'
 import Image from 'next/image'
