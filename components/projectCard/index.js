@@ -1,6 +1,6 @@
 import ProjectStyles from '../../pages/engineering_projects.module.scss'
 import Link from 'next/link'
-import { useState } from 'react/cjs/react.development'
+import { useState } from 'react'
 import Image from 'next/image'
 
 export default function ProjectCard({ props }) {

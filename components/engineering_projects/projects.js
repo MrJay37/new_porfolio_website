@@ -29,7 +29,7 @@ export default function Projects() {
             {projects.map(project => <ProjectCard key={project.id} {...project}/>)}
         </div>
         <Link href={'/engineering_projects'}>
-            <a>View all →</a>
+            <a>View all</a>
         </Link>
     </div>
 }
