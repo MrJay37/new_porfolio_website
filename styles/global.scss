@@ -1,3 +1,5 @@
+@import './utils.module.scss';
+
 html,
 body {
   padding: 0;
@@ -18,4 +20,25 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $theme-secondary;
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: none;
 }

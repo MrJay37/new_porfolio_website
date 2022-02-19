@@ -16,8 +16,8 @@ export default function Home() {
         <Banner />
         <div className={HomeStyles.container}>
             <Introduction />
-            <WhatIHaveStudied />
             <SkillsChart />
+            <WhatIHaveStudied />
             <WhereIHaveWorked />
             <EngineeringProjects />
             <MusicProjects />

@@ -1,6 +1,5 @@
 @import '../../styles/utils.module.scss';
 
-
 .container{
     position: fixed;
     top: 0;
@@ -42,14 +41,33 @@
         }
     }
 
-    .navigationDrawerButton{
-        display: none;
+    .navigationBar{
+        .navigationMenu {
+            display: flex;
+            justify-content: space-evenly;
+            height: 100%;
+            padding: 0 40px;
+
+            .navigationMenuOption{
+                height: 100%;
+                margin: 0 20px;
+                font-size: $fs-small-text-font-size;
+                transition: all 100ms ease-in-out;
+
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.05);
+                }
+            }
+        }
+        .navigationDrawerButton{
+            display: none;
+        }
+
+        .navigationDrawer{
+            display: none;
+        }
     }
-}
-
-
-.navigationDrawer{
-    display: none;
 }
 
 @media (max-width: $tb-max-width) {
@@ -68,20 +86,49 @@
             }
         }
 
-        .navigationDrawerButton{
-            display: block;
-        }
+        .navigationBar{
+            .navigationDrawerButton{
+                display: block;
+                button{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0;
+                    height: 20px;
+                    width: 25px;
+                    margin: auto 20px;
+                    background-color: transparent;
+                    transition: all 1s ease-in-out;
+                    border: none;
 
-        .navigationDrawer{
-            display: block;
-            position: fixed;
-            right: 0;
-            top: 0;
-            background-color: $theme-secondary;
-            filter: opacity(0.5);
-            height: 100vh;
-            width: 60%;
-            transition: width 1s ease-in-out;
+                    span{
+                        display: block;
+                        height: 15%;
+                        border-radius: 2rem;
+                        width: 100%;
+                        background-color: white;
+                    }
+                    
+                }
+                
+            }
+    
+            .navigationDrawer{
+                display: block;
+                position: fixed;
+                right: 0;
+                top: 0;
+                background-color: $theme-secondary;
+                filter: opacity(0.5);
+                height: 100vh;
+                width: 60%;
+                transition: width 1s ease-in-out;
+
+                button{
+                    margin: 20px 0;
+                    height: 25px;
+                }
+            }
         }
     }
 }
