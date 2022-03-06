@@ -12,7 +12,7 @@ import HomeStyles from './home.module.scss'
 export default function Home() {
   return (
     <>
-      <Layout home title='Sanket Jain | Home'>
+      <Layout home title='Sanket Jain'>
         <Banner />
         <div className={HomeStyles.container}>
             <Introduction />
