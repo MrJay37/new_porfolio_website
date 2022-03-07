@@ -14,9 +14,6 @@ export default function ProjectCard(props){
     
         return () => true
       }, [])
-
-      console.log(wideScreen)
-
     
     const left_alignment = props.item_count % 2 === 0
     return <div 
