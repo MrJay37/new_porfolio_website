@@ -11,61 +11,69 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    transition: all 0.5s ease;
+    transition: all 100ms ease;
     
     .avatar {
         height: inherit;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover{
-            cursor: pointer;
-        }
-        
-        .logo {
+        .avatarMain{
             height: inherit;
-            border-radius: 50%;
-            padding: 10px 15px 10px 30px;            
-        }
-
-        .labels {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+
+            &:hover{
+                cursor: pointer;
+            }
             
-            h1 {
-                margin: 0;
-                padding: 0;
-                font-weight: $font-weight-normal;
+            .logo {
+                height: inherit;
+                border-radius: 50%;
+                padding: 10px 15px 10px 30px;            
+            }
+
+            .labels {
+                display: flex;
+                flex-direction: column;
+                
+                h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-weight: $font-weight-normal;
+                }
             }
         }
     }
 
-    .navigationBar{
-        .navigationMenu {
-            display: flex;
-            justify-content: space-evenly;
-            height: 100%;
-            padding: 0 40px;
-
-            .navigationMenuOption{
+    .navigation{
+        .navigationDrawer{
+            .navigationMenu {
+                display: flex;
+                justify-content: space-evenly;
                 height: 100%;
-                margin: 0 20px;
-                font-size: $fs-small-text-font-size;
-                transition: all 100ms ease-in-out;
-
-                &:hover{
-                    cursor: pointer;
-                    transform: scale(1.05);
+                padding: 0 40px;
+    
+                .navigationMenuOption{
+                    height: 100%;
+                    margin: 0 20px;
+                    font-size: $fs-small-text-font-size;
+                    transition: all 100ms ease-in-out;
+    
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.05);
+                    }
                 }
             }
         }
-        .navigationDrawerButton{
-            display: none;
-        }
+    }
+}
 
-        .navigationDrawer{
-            display: none;
+// Only to hide the hamburger button icon in main view
+@media (min-width: $tb-max-width) {
+    .container{
+        .avatar{
+            .HambugerButton{
+                display: none;
+            }
         }
     }
 }
@@ -73,62 +81,60 @@
 @media (max-width: $tb-max-width) {
     .container{
         height: $tb-header-height;
+        display: flex;
+        flex-direction: column;
         
         .avatar {
-            .logo {
-                padding: 5px 15px 5px 10px;                
-            }
-    
-            .labels {
-                h1 {
-                    font-size: $tb-normal-text-font-size;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .avatarMain{
+                .logo {
+                    padding: 5px 15px 5px 10px;                
+                }
+        
+                .labels {
+                    h1 {
+                        font-size: $tb-normal-text-font-size;
+                    }
                 }
             }
         }
 
-        .navigationBar{
-            .navigationDrawerButton{
-                display: block;
-                button{
+        .navigation{ 
+            .navigationDrawer{
+                position: fixed;
+                width: 100%;
+                padding: 0;
+                right: 0;
+                top: $tb-header-height;
+                transition: visibility 1s ease-in-out;
+                animation: rollIn 100ms;
+                animation-direction: normal;
+                animation-fill-mode: both;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                background-color: rgba(0, 0, 0, 0.75);
+
+                .navigationMenu {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
                     padding: 0;
-                    height: 20px;
-                    width: 25px;
-                    margin: auto 20px;
-                    background-color: transparent;
-                    transition: all 1s ease-in-out;
-                    border: none;
-
-                    span{
-                        display: block;
-                        height: 15%;
-                        border-radius: 2rem;
+                    .navigationMenuOption{
+                        font-size: $tb-small-text-font-size;
                         width: 100%;
-                        background-color: white;
+                        padding: 10px 0 10px 20px;
+                        margin: 0;
+                        border-top: 0.5px solid rgba($theme-secondary, 0.30);
                     }
-                    
                 }
-                
             }
-    
-            .navigationDrawer{
-                display: block;
-                position: fixed;
-                right: 0;
-                top: 0;
-                background-color: $theme-secondary;
-                filter: opacity(0.5);
-                height: 100vh;
-                width: 60%;
-                transition: width 1s ease-in-out;
 
-                button{
-                    margin: 20px 0;
-                    height: 25px;
-                }
-            }
+            @keyframes rollIn {
+                0% { opacity: 0; transform: translateY(0px); }
+                100% { opacity: 1; transform: translateY(0px); } 
+             } 
         }
     }
 }

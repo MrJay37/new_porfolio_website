@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getEducationData } from '../../lib/api'
+import EducationData from '../../static/education_data'
 import EducationStyles from './whatIHaveStudied.module.scss'
 
-export default function WhatIHaveStudied() {
-    const [educationData, setEducationData] = useState([])
+function WhatIHaveStudied({ edu_data }) {
+    const [educationData, setEducationData] = useState(edu_data)
     
-    useEffect(async () => {
-        setEducationData(await getEducationData())
-        
-        return () => true
-    }, [])
     const formatToYearMonth = (date_obj) => {
         if (date_obj === undefined){
             return 'Now'
@@ -25,7 +21,7 @@ export default function WhatIHaveStudied() {
     return <div className={EducationStyles.container}>
         <div className={EducationStyles.title}>What I've Studied?</div>
         <div className={EducationStyles.educationList}>
-            {educationData.map(({
+            {EducationData.map(({
                 id,
                 start,
                 end,
@@ -58,3 +54,5 @@ export default function WhatIHaveStudied() {
         </div>
     </div>
 }
+
+export default WhatIHaveStudied

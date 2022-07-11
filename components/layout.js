@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
 import styles from './layout.module.scss'
+import Banner from './banner'
 
 
 export default function Layout({ children, home, title }) {
@@ -13,11 +14,12 @@ export default function Layout({ children, home, title }) {
       </Head>
       <div className={styles.appContainer}>
         <Header home={home}/>
-          <div className={home ? styles.homeContainer : styles.container}>
+          {home && <Banner />}
+          <div className={styles.container}>
             {children}
           </div>
-        <Footer home/>
       </div>
+      <Footer home/>
     </>
   )
 }

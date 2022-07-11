@@ -8,12 +8,10 @@ import Introduction from '../components/introduction'
 import MusicProjects from '../components/music_projects'
 import HomeStyles from './home.module.scss'
 
-
-export default function Home() {
+export default function Home({ props }) {
   return (
     <>
       <Layout home title='Sanket Jain'>
-        <Banner />
         <div className={HomeStyles.container}>
             <Introduction />
             <SkillsChart />

@@ -131,17 +131,18 @@
                 width: 100%;
         
                 .label {
+                    z-index: 1;
                     font-size: $tb-normal-text-font-size;
-                    max-width: 25%;
                     padding: 0;
-                    flex-direction: row;
-                    justify-content: flex-start;
+                    position: inherit;
+                    text-align: left;
+                    color: black;
                 }
                 
                 .barContainer{
-                    flex-direction: row;
+                    position: absolute;
                     height: 60px;
-                    max-width: 75%;
+                    max-width: 90%;
                     border-top: none;
                     border-right: 1px solid white;
                     background: repeating-linear-gradient(
@@ -160,7 +161,7 @@
                         width: 100%;                        
 
                         .barStep {
-                            background: repeating-linear-gradient(to left top,$theme-secondary,$theme-secondary 40%,black 50%,black 50%);
+                            // background: repeating-linear-gradient(to left top,$theme-secondary,$theme-secondary 40%,black 50%,black 50%);
                             height: 70%;
                             width: 0;
                             animation: widthRise 50ms;
@@ -168,7 +169,7 @@
                         }
 
                         .barStep_max {
-                            background: repeating-linear-gradient(to left top, $theme-secondary,$theme-secondary 40%,black 50%,black 50%);
+                            // background: repeating-linear-gradient(to left top, $theme-secondary,$theme-secondary 40%,black 50%,black 50%);
                             height: 70%;
                             border-top-left-radius: 0;
                             border-top-right-radius: 0.5rem;

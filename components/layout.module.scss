@@ -7,13 +7,12 @@
 
   .container {
     width: 80%;
+    max-width: 1280px;
+    margin: auto;
     min-height: calc(100vh - 160px);
     margin: $fs-header-height auto 0;
   }
-  
-  .homeContainer {
-    width: 100%;  
-  }
+
 }
 
 @media (max-width: $tb-max-width) {
@@ -29,6 +28,6 @@
 @media (max-width: $sp-max-width) {
   .appContainer{
     .container {
-    }  
+    }
   }
 }
