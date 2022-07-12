@@ -37,15 +37,16 @@
             transition: all 0.2s ease;
             font-size: $fs-heading-3-font-size;
             overflow: hidden;
-            max-height: 500px;
+
+            &:hover{
+                cursor: pointer;
+            }
 
             .projectCardTitle{
                 padding: 0;
                 margin: 0;
-                width: 50%;
-                max-height: 500px;
                 max-width: 600px;
-                object-fit: scale-down;
+                // object-fit: scale-down;
             }
 
             .projectCardText{
@@ -53,25 +54,10 @@
                 flex-direction: column;
                 padding: 0 50px;
                 justify-content: center;
+                text-align: center;
                 
                 h3{
-                    font-size: $fs-heading-3-font-size;
-                    transition: all 50ms ease-in-out;
-
-                    &:hover{
-                        text-decoration: underline;
-                        transform: scale(1.05);
-                        cursor: pointer;
-                    }
-                }
-
-                p{
-                    overflow: scroll;
-                    text-align: justify;
-                    padding-right: 10px;
-                    margin: 0;
-                    font-size: $fs-small-text-font-size;
-                    max-height: 160px;
+                    font-size: $fs-heading-2-font-size;
                 }
 
                 .tagContainer{
@@ -87,13 +73,6 @@
                         padding: 5px 15px;
                         font-size: $fs-small-text-font-size;
                         transition: all 0.1s ease;
-
-                        &:hover{
-                            transform: scale(1.05);
-                            background-color: $theme-secondary;
-                            color: black;
-                            cursor: pointer;
-                        }
                     }
                 }
             }
@@ -113,13 +92,13 @@
             display: flex;
             flex-direction: column;
             margin: 20px 40px;
-            width: 80%;
+            width: 90%;
+            margin: auto;
     
             .projectCard{
                 flex-direction: column;
                 align-items: center;
                 font-size: $tb-heading-3-font-size;
-                max-height: none;
     
                 .projectCardTitle{
                     width: 100%;
@@ -127,19 +106,12 @@
     
                 .projectCardText{
                     flex-direction: column;
-                    padding: 0 15px;
+                    // padding: 0 15px;
                     justify-content: center;
                     
                     h3{
                         margin: 15px 0;
                         font-size: $fs-heading-3-font-size;
-                    }
-    
-                    p{
-                        text-align: justify;
-                        overflow: scroll;
-                        margin: 0;
-                        font-size: $tb-small-text-font-size;
                     }
     
                     .tagContainer{
@@ -153,13 +125,7 @@
                             padding: 5px 15px;
                             font-size: $tb-small-text-font-size;
                             transition: all 0.1s ease;
-    
-                            &:hover{
-                                cursor: pointer;
-                                transform: scale(1.05);
-                                background-color: $theme-secondary;
-                                color: black;
-                            }
+
                         }
                     }
                 }
@@ -170,5 +136,9 @@
 }
 
 @media (max-width: $sp-max-width) {
-    
+    .container{
+        .title{
+            font-size: $sp-heading-1-font-size;
+        }
+    }
 }

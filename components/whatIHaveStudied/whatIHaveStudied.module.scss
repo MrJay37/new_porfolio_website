@@ -23,55 +23,53 @@
         .educationCard{
             width: 100%;
             display: flex;
-            flex-direction: column;
-            // border: $theme-secondary solid 1px;
-            border-radius: 0.5em;
-            // margin: 30px auto;
+            flex-direction: row;
+            margin: 10px 0;
             padding: 0 10px 10px 10px;
             overflow: hidden;
+            width: 100%;
+            justify-content: space-between;
 
-            .educationCardTitle{
+            .educationCardDates{
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-between;
-                
-                .educationCardTitleText{
-                    text-align: right;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    h1{
-                        font-size: $fs-heading-3-font-size;
-                        font-weight: $font-weight-normal;
-                        margin: 10px 0;
+                width: 20%;
 
-                        &:hover{
-                            cursor: pointer;
-                            transform: scale(1.05);
-                        }
-                    }
-
-                    h3{
-                        margin: 0;
-                        font-size: $fs-normal-text-font-size;
-                        font-weight: $font-weight-light;
-                    }
-
-                    p {
-                        margin: 10px 0;
-                        font-size: $fs-normal-text-font-size;
-                        font-weight: $font-weight-light;
-                    }
-                }
-
-                .educationCardTitleDates{
-                    padding-left: 0 0 0 10px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
+                .educationCardTitleDate{
                     font-size: $fs-normal-text-font-size;
                 }
             }
+
+            .educationCardText{
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                h1{
+                    font-size: $fs-heading-3-font-size;
+                    font-weight: $font-weight-normal;
+                    margin: 0 0 10px 0;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+                h3{
+                    margin: 0;
+                    font-size: $fs-normal-text-font-size;
+                    font-weight: $font-weight-light;
+                }
+
+                p {
+                    margin: 10px 0;
+                    font-size: $fs-normal-text-font-size;
+                    font-weight: $font-weight-light;
+                }
+            }
+
         }
     }
 }
@@ -84,28 +82,30 @@
 
         .educationList{           
             .educationCard{
-                .educationCardTitle{                    
-                    .educationCardTitleText{
-                        h1{
-                            font-size: $tb-heading-3-font-size;
-                        }
+                .educationCardDates{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 35%;
 
-                        h3{
-                            font-size: $tb-normal-text-font-size;
-                            font-weight: $font-weight-light;
-                        }
-
-                        p{
-                            font-size: $tb-normal-text-font-size;
-                            font-weight: $font-weight-light;
-                        }
+                    .educationCardTitleDate{
+                        font-size: $tb-small-text-font-size;
                     }
-    
-                    .educationCardTitleDates{
-                        padding-left: 0 0 0 10px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
+                }
+
+                .educationCardText{
+                    h1{
+                        font-size: $tb-heading-3-font-size;
+                    }
+
+                    h3{
+                        font-size: $tb-small-text-font-size;
+                        font-weight: $font-weight-light;
+                    }
+
+                    p{
+                        font-size: $tb-small-text-font-size;
+                        font-weight: $font-weight-light;
                     }
                 }
             }

@@ -131,12 +131,11 @@
                 width: 100%;
         
                 .label {
-                    z-index: 1;
                     font-size: $tb-normal-text-font-size;
-                    padding: 0;
-                    position: inherit;
-                    text-align: left;
+                    padding: 0 0 0 10px;
+                    justify-content: start;
                     color: black;
+                    z-index: 1;
                 }
                 
                 .barContainer{

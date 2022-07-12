@@ -22,20 +22,19 @@
         border-radius: 0.5em;
         margin: 30px auto;
         overflow: hidden;
+        transition: all 100ms ease;
+
+        &:hover{
+            background-color: $theme-secondary;
+            color: black;
+            cursor: pointer;
+        }
 
         .workExCardTitle{
             display: flex;
             justify-content: space-between;    
             padding: 5px 10px;
             align-items: center;
-            transition: all 100ms ease-in;
-
-            &:hover{
-                background-color: $theme-secondary;
-                color: black;
-                cursor: pointer;
-            }
-    
             
             .WorkExCardTitleText{
                 h1{
@@ -66,10 +65,9 @@
         }
 
         .workExDuties{
-            max-height: 0;
-            transition: max-height 800ms ease-in;
             padding: 0 10px;
-            // overflow-y: scroll;
+            overflow-y: scroll;
+            transition: max-height 100ms ease;
 
             .workExDutiesList{
                 position: relative;
@@ -129,9 +127,7 @@
     
             .workExDuties{
                 max-height: 0;
-                transition: max-height 800ms ease-in;
                 padding: 0 10px;
-                // overflow-y: scroll;
     
                 .workExDutiesList{
                     position: relative;
