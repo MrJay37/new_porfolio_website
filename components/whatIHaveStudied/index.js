@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import EducationData from '../../static/education_data'
 import EducationStyles from './whatIHaveStudied.module.scss'
+import Link from 'next/link'
 
 const formatToYearMonth = (date_obj) => {
     if (date_obj === undefined){
@@ -14,8 +15,8 @@ const formatToYearMonth = (date_obj) => {
     return date_string.split(' ')[3] + ' ' + date_string.split(' ')[1]
 }
 
-function SchoolCard( { end, start, school, degree, program, location } ) {
-    return <>
+function SchoolCard( { id, end, start, school, degree, program, location } ) {
+    return <Link href={'/education#' + id}>
     <div className={EducationStyles.educationCard}>
             <div className={EducationStyles.educationCardDates}>
                 <div className={EducationStyles.educationCardTitleDate}>- {formatToYearMonth(end)}</div>    
@@ -28,7 +29,7 @@ function SchoolCard( { end, start, school, degree, program, location } ) {
                 <p>{location.state}, {location.country}</p>
             </div>
     </div>
-    </>
+    </Link>
 }
 
 

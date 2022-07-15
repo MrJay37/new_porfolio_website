@@ -1,0 +1,81 @@
+@import '../styles/utils.module.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title{
+        font-size: $fs-heading-1-font-size;
+        text-align: center;
+    }
+
+    .workExperienceCards{
+        .container{
+            padding-top: $fs-header-height;
+            .workExperienceCard{
+            
+                border: 1px solid $theme-secondary;
+                padding-top: $fs-header-height;
+                width: 100%;
+                padding: 40px;
+                border-radius: 2rem;
+                .cardHeader{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .cardHeaderText{
+                        h2{
+                            margin: 0;;
+                            font-size: $fs-heading-3-font-size;
+                            font-weight: 400;
+                            
+                        }
+    
+                        span{
+                            font-size: $fs-normal-text-font-size;
+                            font-weight: 100;
+                        }
+    
+                        .cardHeaderDates{
+                            span{
+                                font-size: $fs-small-text-font-size;
+                            }
+                        }
+                    }
+    
+                    .cardHeaderLogo{
+                        img{
+                            max-height: 150px;
+                            border: 1px solid $theme-secondary;
+                            border-radius: 2rem;
+                            overflow: hidden;
+                        }
+                    }
+                }
+    
+                .cardBody{
+                    margin: 20px auto 0;
+                    
+                    .heading{
+                        font-size: $fs-normal-text-font-size;
+                    }
+    
+                    ul{
+                        padding-left: 2%;
+                        li{
+                            font-size: $fs-small-text-font-size;
+                            list-style-position: outside;
+                            list-style-type: square;
+                        }
+    
+                    }
+                }
+    
+                .cardFooter{
+    
+                }
+            }       
+        }
+    }
+}

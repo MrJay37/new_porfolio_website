@@ -34,11 +34,11 @@ export default function Header({ home }) {
   }, [])
 
   const menu = [
-    {
-      'id': 'about',
-      'displayText': 'About',
-      'to': '/about'
-    },
+    // {
+    //   'id': 'about',
+    //   'displayText': 'About',
+    //   'to': '/about'
+    // },
     {
       'id': 'education',
       'displayText': 'Education',
@@ -51,8 +51,8 @@ export default function Header({ home }) {
     },
     {
       'id': 'software',
-      'displayText': 'Software',
-      'to': '/engineering_projects'
+      'displayText': 'Engineering',
+      'to': '/engineering'
     },
     {
       'id': 'music',

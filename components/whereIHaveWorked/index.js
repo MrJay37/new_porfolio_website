@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import workExperience from '../../static/work_ex_data'
 import WorkExStyles from './workEx.module.scss'
+import Link from 'next/link'
 
 const formatToYearMonth = (date_obj) => {
     if (date_obj === undefined || date_obj === null){
@@ -13,9 +14,8 @@ const formatToYearMonth = (date_obj) => {
 }
 
 function WorkCard({ workData }){
-    const [drawer, setDrawer] = useState(false)
-    return <>
-        <div className={WorkExStyles.workExCard} onClick={() => setDrawer(!drawer)}>
+    return <Link href={'/work#' + workData.id}>
+        <div className={WorkExStyles.workExCard}>
             <div className={WorkExStyles.workExCardTitle}>
                 <div className={WorkExStyles.WorkExCardTitleText}>
                     <h1>
@@ -33,17 +33,9 @@ function WorkCard({ workData }){
                     <div>From {formatToYearMonth(workData.start)}</div>
                 </div>
             </div>
-            <div className={WorkExStyles.workExDuties} style={{maxHeight: drawer ? '400px' : 0 }}>
-                <div className={WorkExStyles.workExDutiesList}>
-                    {workData.duties.map((duty, i) => (
-                        <li key={i}>
-                            {duty}  
-                        </li>
-                    ))}
-                </div>
-            </div>
+
         </div>
-    </>
+    </Link>
 }
 
 export default function WhereIHaveWorked() {

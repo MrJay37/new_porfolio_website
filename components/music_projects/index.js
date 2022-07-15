@@ -60,7 +60,7 @@ export default function MusicProjects() {
             Music Projects
         </div>
         <div className={MusicProjectStyles.projectCards}>
-            {MusicData.map((music_obj, i) => <ProjectCard key={i} {...music_obj} item_count={i} href={'/music/' + music_obj.id}/>)}
+            {MusicData.map((music_obj, i) => <ProjectCard key={i} {...music_obj} item_count={i} href={'/music#' + music_obj.id}/>)}
         </div>
     </div>
 }

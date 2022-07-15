@@ -1,11 +1,19 @@
-import ProjectStyles from './projects.module.scss'
+import Styles from './projects.module.scss'
 import Link from 'next/link'
 
 export default function ProjectCard(project) {
     
-    return <Link href={'/engineering_projects/' + project.id}>
-        <div className={ProjectStyles.projectCard}>
-            <h3>{project.title}</h3>
+    return <Link href={'/engineering#' + project.id}>
+        <div className={Styles.projectCard}>
+            <div className={Styles.projectCardHeader}>
+                <h3>{project.title}</h3>
+                <span>
+                    {project.project_started.toDateString()} {project.project_ended ? 'to ' + project.project_ended.toDateString(): '(Ongoing)'}
+                </span>
+            </div>
+            <div className={Styles.techStackTags}>
+                {project.tech_stack.map((ts, i) => <span key={i}>{ts}</span>)}
+            </div>
         </div>
     </Link>
 }

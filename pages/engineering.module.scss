@@ -1,0 +1,89 @@
+@import '../styles/utils.module.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        font-size: $fs-heading-1-font-size;
+        text-align: center;
+    }
+
+    .projectCards{
+        .projectCardContainer{
+            padding-top: $fs-header-height;
+
+            .projectCard{
+                display: flex;
+                flex-direction: column;
+                border: 1px solid $theme-secondary;
+                margin: 0 20px;
+                border-radius: 2rem;
+                overflow: hidden;
+                max-width: 1000px;
+                .cardHeader{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .cardHeaderBanner{
+                        width: 100%;
+                    }
+
+                    .cardHeaderText{
+                        background-color: $theme-secondary;
+                        color: black;
+                        h2{
+                            font-size: $fs-heading-2-font-size;
+                            font-weight: 400;
+                            text-align: center;
+                            margin: 20px 0 0;
+                        }
+
+                        .cardHeaderDates{
+                            text-align: center;
+                            font-size: $fs-normal-text-font-size;
+                            margin: 0 0 20px
+                        }
+                    }
+                }
+
+                .cardBody{
+                    padding: 20px 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .cardBodyItem{
+                        .cardBodyItemHeading{
+                            margin: 0;
+                            font-size: $fs-heading-3-font-size;
+                        }
+
+                        ul{
+                            margin: 0;
+                            padding: 3% 0 0;
+
+                            a{
+                                text-decoration: none;
+                                color: white;
+                                
+                                &:hover{
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+
+                            li{
+                                list-style-position: inside;
+                                font-size: $fs-small-text-font-size;
+                                margin: 10px 0;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
