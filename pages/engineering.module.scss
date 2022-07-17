@@ -50,38 +50,55 @@
                 }
 
                 .cardBody{
-                    padding: 20px 40px;
                     display: flex;
-                    justify-content: space-between;
-                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
 
-                    .cardBodyItem{
-                        .cardBodyItemHeading{
-                            margin: 0;
-                            font-size: $fs-heading-3-font-size;
+                    .cardBodyText{
+                        padding: 0 40px;
+                        margin: 10px auto;
+
+                        p{
+                            text-align: justify;
+                            font-size: $fs-normal-text-font-size;
                         }
 
-                        ul{
-                            margin: 0;
-                            padding: 3% 0 0;
+                    }
 
-                            a{
-                                text-decoration: none;
-                                color: white;
-                                
-                                &:hover{
-                                    cursor: pointer;
-                                    text-decoration: underline;
+                    .cardBodyItems{
+                        padding: 20px 40px;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .cardBodyItem{
+                            .cardBodyItemHeading{
+                                margin: 0;
+                                font-size: $fs-heading-3-font-size;
+                            }
+
+                            ul{
+                                margin: 0;
+                                padding: 3% 0 0;
+
+                                a{
+                                    text-decoration: none;
+                                    color: white;
+                                    
+                                    &:hover{
+                                        cursor: pointer;
+                                        text-decoration: underline;
+                                    }
+                                }
+
+                                li{
+                                    list-style-position: inside;
+                                    font-size: $fs-small-text-font-size;
+                                    margin: 10px 0;
                                 }
                             }
-
-                            li{
-                                list-style-position: inside;
-                                font-size: $fs-small-text-font-size;
-                                margin: 10px 0;
-                            }
-                        }
-                    } 
+                        } 
+                    }
                 }
             }
         }

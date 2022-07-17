@@ -71,50 +71,99 @@
     .container{
         .title {
             margin-top: 30px;
-            font-size: $tb-heading-1-font-size;
+            font-size: $tb-heading-2-font-size;
         }
     
         .projectCards{
             margin-top: 10px;
+            max-width: 80%;
             flex-direction: column;            
             align-items: center;
     
             .projectCard{
-                height: 25%;
-                min-width: 80%;
-                border: $theme-secondary solid 2px;
-                border-radius: 5rem;
-                margin: 10px 0;
+                border: $theme-secondary solid 1px;
+                border-radius: 2rem;
+                padding: 10px;
                 
-                h3{
-                    font-size: $tb-normal-text-font-size;
+                .projectCardHeader{
+                    display: flex;
+                    flex-direction: column;
+
+                    h3{
+                        font-size: $tb-normal-text-font-size;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+
+                    span{
+                        font-size: $tb-small-text-font-size;
+                        font-weight: 100;
+                    }
+                }
+
+                .techStackTags{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-self: center;
+                    justify-content: center;
+
+                    span{
+                        font-size: $tb-small-text-font-size;
+                        border: 0.5px solid $theme-secondary
+                    }
                 }
             }
-        }
-    
-        a{
-            margin: 35px 10px 0 0;
-        }
-    
+        }   
     }    
 }
 
 @media (max-width: $sp-max-width) {
     .container{
-        width: 90%;
-    
         .title {
+            margin-top: $sp-header-height;
             font-size: $sp-heading-1-font-size;
         }
     
-        .projectCards{        
-            .projectCard{       
-                border: $theme-secondary solid 1px;        
-                h3{
-                    font-weight: $font-weight-normal;
-                    font-size: $sp-normal-text-font-size;
+        .projectCards{
+            margin-top: 10px;
+            max-width: 80%;
+            flex-direction: column;            
+            align-items: center;
+    
+            .projectCard{
+                border: $theme-secondary solid 1px;
+                border-radius: 2rem;
+                padding: 6px;
+                
+                .projectCardHeader{
+                    display: flex;
+                    flex-direction: column;
+
+                    h3{
+                        font-size: $sp-heading-2-font-size;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+
+                    span{
+                        font-size: $tb-small-text-font-size;
+                        font-weight: 100;
+                    }
+                }
+
+                .techStackTags{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-self: center;
+                    justify-content: center;
+                    padding: 0;
+
+                    span{
+                        font-size: $tb-small-text-font-size;
+                        border: 0.5px solid $theme-secondary
+                    }
                 }
             }
-        }    
-    }
+        }   
+    }    
 }

@@ -1,0 +1,140 @@
+@import '../styles/utils.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        font-size: $fs-heading-1-font-size;
+        text-align: center;
+    }
+
+    .musicCards{
+        .container{
+            padding-top: $fs-header-height;
+
+            .musicCard{
+                margin: 0 20px;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid $theme-secondary;
+                border-radius: 2rem;
+                overflow: hidden;
+                max-width: 960px;
+                    
+                .cardHeader{
+                    position: relative;
+                    h2{
+                        font-size: $fs-heading-2-font-size;
+                        text-align: center;
+                        margin: 40px 0 ;
+                    }
+
+                    img{
+                        max-width: 100%;
+                    }
+                }
+
+                .genreTags{
+                    text-align: center;
+                    margin-top: 20px;
+                    
+                    span{
+                        margin: 0 10px;
+                        border: 1px solid $theme-secondary;
+                        font-size: $fs-small-text-font-size;
+                        padding: 10px;
+                        border-radius: 1rem;
+                    }
+                }
+
+                .cardBody{
+                    .cardBodyText{
+                        padding: 30px;
+                        font-size: $fs-normal-text-font-size;
+                    }
+
+                    .cardBodyMembers{
+                        padding: 0 30px;
+                        h3{
+                            text-align: center;
+                            font-size: $fs-heading-3-font-size;
+                        }
+                        
+                        .musicMember{
+                            border: 1px solid $theme-secondary;
+                            border-radius: 1rem;
+                            margin: 15px 0;
+                            padding: 20px;
+
+                            .musicMemberHeader{
+                                display: flex;
+                                justify-content: space-between;
+
+                                span{
+                                    font-size: $fs-normal-text-font-size;
+                                }
+
+                                &:hover{
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .musicMemberBody{
+                                .musicMemberArtForms{
+                                    margin: 20px 0;
+
+                                    span{
+                                        margin: 0 20px 0 0;
+                                        padding: 5px 10px;
+                                        border: 1px solid $theme-secondary;
+                                        border-radius: 1rem;
+                                    }
+                                }
+
+                                .musicMemberLinks{
+                                    margin: 40px 0 0;
+
+                                    text{
+                                        font-size: $fs-small-text-font-size;
+                                    }
+
+                                    li{
+                                        margin: 0 0 10px;
+                                        font-size: $fs-small-text-font-size;
+                                        a{
+                                            text-decoration: underline;
+                                            color: white;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    .cardBodyProjects{
+                        padding: 0 30px;
+                        margin-bottom: 50px;
+                        h3{
+                            text-align: center;
+                            font-size: $fs-heading-3-font-size;
+                        }
+
+                        .musicProject{
+                            margin: 30px 0;
+
+                            .musicProjectEmbed{
+                                display: flex;
+                                justify-content: center;
+                                width: 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ export default function ProjectCard(project) {
                 </span>
             </div>
             <div className={Styles.techStackTags}>
-                {project.tech_stack.map((ts, i) => <span key={i}>{ts}</span>)}
+                {project.tech_stack.slice(0, 3).map((ts, i) => <span key={i}>{ts}</span>)}
             </div>
         </div>
     </Link>

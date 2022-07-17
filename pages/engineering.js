@@ -27,23 +27,28 @@ function ProjectCard(props){
       </div>
     </div>
     <div className={Styles.cardBody}>
-      <div className={Styles.cardBodyItem}>
-        <h3 className={Styles.cardBodyItemHeading}>Members</h3>
-        <ul>
-          {props.members.map((member, i) => <a key={i} href={member.url} ><li>{member.name}</li></a>)}
-        </ul>
+      <div className={Styles.cardBodyText}>
+          <p>{props.description}</p>
       </div>
-      <div className={Styles.cardBodyItem}>
-        <h3 className={Styles.cardBodyItemHeading}>Tech Stack</h3>
-        <ul>
-          {props.tech_stack.map((member, i) => <li key={i}>{member}</li>)}
-        </ul>
-      </div>
-      <div className={Styles.cardBodyItem}>
-        <h3 className={Styles.cardBodyItemHeading}>Links</h3>
-        <ul>
-          {props.links.filter((member, i) => member.url ).map((member, i) => <a key={i} href={member.url} ><li>{member.app}</li></a>)}
-        </ul>
+      <div className={Styles.cardBodyItems}>
+        <div className={Styles.cardBodyItem}>
+          <h3 className={Styles.cardBodyItemHeading}>Members</h3>
+          <ul>
+            {props.members.map((member, i) => <a key={i} href={member.url} ><li>{member.name}</li></a>)}
+          </ul>
+        </div>
+        <div className={Styles.cardBodyItem}>
+          <h3 className={Styles.cardBodyItemHeading}>Tech Stack</h3>
+          <ul>
+            {props.tech_stack.map((member, i) => <li key={i}>{member}</li>)}
+          </ul>
+        </div>
+        <div className={Styles.cardBodyItem}>
+          <h3 className={Styles.cardBodyItemHeading}>Links</h3>
+          <ul>
+            {props.links.filter((link, i) => link.url ).map((link, i) => <a key={i} href={link.url} ><li>{link.app}</li></a>)}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
