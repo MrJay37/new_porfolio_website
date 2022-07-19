@@ -1,0 +1,108 @@
+@import '../styles/utils.module.scss';
+
+.container{
+    margin-top: 40px;
+
+    .greeting{
+        font-size: var(--heading-2-font-size);
+        text-align: center;
+    }
+
+    .contactForm{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+
+        .contactFormItem{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+
+            .contactFormItemLabel{
+                text-align: center;
+                font-size: var(--font-size-xl);
+                margin: 0 0 20px 0;
+            }
+
+            .contactFormItemField{
+                width: 60%;
+                height: 40px;
+                border-radius: 2rem;
+                padding: 0 15px;
+                font-size: var(--font-size-l);
+            }
+
+            .contactFormItemTextarea{
+                width: 60%;
+                max-width: 60%;
+                height: 160px;
+                border-radius: 2rem;
+                padding: 15px;
+                font-size: var(--font-size-l);
+            }
+        }
+
+        .contactFormSubmitButton{
+            width: 40%;
+            margin: 0 auto;
+            height: 40px;
+            font-size: var(--font-size-l);
+            background-color: var(--theme-primary-color);
+            border-radius: 2rem;
+            color: white;
+            border: 1px solid var(--theme-secondary-color);
+        }
+    }
+    
+    .notification{
+        position: fixed;
+        text-align: center;
+        font-size: var(--font-size-xl);
+        border-radius: 1rem;
+        padding: 10px;
+        // margin: 0 auto;
+        top: 80%;
+        left: 50%;
+        color: white;
+        transition: all 250ms ease-in;
+    } 
+}
+
+@media (max-width: $tb-max-width) {
+    .container{
+        margin-top: 20px;
+
+        .greeting{
+
+        }
+
+        .contactForm{
+            margin-top: 20px;
+            width: 100%;
+
+            .contactFormItemLabel{
+                text-align: center;
+                font-size: var(--font-size-xl);
+                margin: 0 0 20px 0;
+            }
+
+            .contactFormItemField{
+                width: 100%;
+                height: 40px;
+                border-radius: 2rem;
+                padding: 0 15px;
+                font-size: var(--font-size-l);
+            }
+
+            .contactFormItemTextarea{
+                max-width: 60%;
+                height: 160px;
+                border-radius: 2rem;
+                padding: 15px;
+                font-size: var(--font-size-l);
+            }
+        }
+
+    }
+}

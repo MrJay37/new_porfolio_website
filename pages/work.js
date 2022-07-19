@@ -40,17 +40,15 @@ function WorkExperienceCard( props ) {
 export default function WorkExperience({ props }) {
     return <Layout home={false} title='Sanket Jain | Work'>
         <div className={Styles.container}>
-            <div className={Styles.title}>
+            <div className={'pagesTitle'}>
                 Work Experience
             </div>
-            <div className={Styles.workExperienceCards}>
-                {WorkExperienceData.map((work_ex, i) => (
-                    <div key={i} className={Styles.container} id={work_ex.id}>
-                        <WorkExperienceCard {...work_ex}/>
-                    </div>
-                    
-                ))}
-            </div>
+            {WorkExperienceData.map((work_ex, i) => (
+                <div key={i} className={'pagesCardContainer'} id={work_ex.id}>
+                    <WorkExperienceCard {...work_ex}/>
+                </div>
+                
+            ))}
         </div>
     </Layout>
 }

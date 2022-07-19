@@ -50,12 +50,12 @@ function EducationCard( props ) {
 export default function Education() {
     return <Layout home={false} title='Sanket Jain | Education'>
         <div className={Styles.container}>
-            <div className={Styles.title}>
+            <div className={'pagesTitle'}>
                 Education
             </div>
             {
                 EducationData.map((edu_data, i) => 
-                <div className={Styles.CardContainer} id={edu_data.id}  key={i}>
+                <div className={'pagesCardContainer'} id={edu_data.id}  key={i}>
                     <EducationCard align={i % 2 === 0} {...edu_data}/>
                 </div>)
             }

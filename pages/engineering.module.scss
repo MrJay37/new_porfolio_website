@@ -1,103 +1,103 @@
 @import '../styles/utils.module.scss';
 
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .projectCard{
+        border: 1px solid var(--theme-secondary-color);
+        border-radius: 2rem;
+        overflow: hidden;
 
-    .title{
-        font-size: $fs-heading-1-font-size;
-        text-align: center;
-    }
+        .cardHeader{
+            // width: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            .cardHeaderBanner{
+                width: 100%;
+            }
 
-    .projectCards{
-        .projectCardContainer{
-            padding-top: $fs-header-height;
-
-            .projectCard{
-                display: flex;
-                flex-direction: column;
-                border: 1px solid $theme-secondary;
-                margin: 0 20px;
-                border-radius: 2rem;
-                overflow: hidden;
-                max-width: 1000px;
-                .cardHeader{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    
-                    .cardHeaderBanner{
-                        width: 100%;
-                    }
-
-                    .cardHeaderText{
-                        background-color: $theme-secondary;
-                        color: black;
-                        h2{
-                            font-size: $fs-heading-2-font-size;
-                            font-weight: 400;
-                            text-align: center;
-                            margin: 20px 0 0;
-                        }
-
-                        .cardHeaderDates{
-                            text-align: center;
-                            font-size: $fs-normal-text-font-size;
-                            margin: 0 0 20px
-                        }
-                    }
+            .cardHeaderText{
+                background-color: var(--theme-secondary-color);
+                color: black;
+                text-align: center;
+                h2{
+                    font-size: var(--heading-2-font-size);
+                    font-weight: var(--font-weight-normal);
                 }
 
-                .cardBody{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                .cardHeaderDates{
+                    font-size: var(--font-size-l);
+                    margin: 0 0 20px
+                }
+            }
+        }
 
-                    .cardBodyText{
-                        padding: 0 40px;
-                        margin: 10px auto;
+        .cardBody{
+            .cardBodyText{
+                padding: 0 40px;
 
-                        p{
-                            text-align: justify;
-                            font-size: $fs-normal-text-font-size;
-                        }
+                p{
+                    text-align: justify;
+                    font-size: var(--font-size-l);
+                }
 
+            }
+
+            .cardBodyItems{
+                padding: 20px 40px;
+                display: flex;
+                justify-content: space-between;
+
+                .cardBodyItem{
+                    .cardBodyItemHeading{
+                        margin: 0;
+                        font-size: var(--heading-3-font-size);
                     }
 
-                    .cardBodyItems{
-                        padding: 20px 40px;
-                        display: flex;
-                        justify-content: space-between;
-                        width: 100%;
+                    ul{
+                        margin: 0;
+                        padding: 3% 0 0;
 
-                        .cardBodyItem{
-                            .cardBodyItemHeading{
-                                margin: 0;
-                                font-size: $fs-heading-3-font-size;
+                        a{
+                            text-decoration: underline;
+                            color: white;
+                            
+                            &:hover{
+                                cursor: pointer;
+                                text-decoration: underline;
                             }
+                        }
 
-                            ul{
-                                margin: 0;
-                                padding: 3% 0 0;
+                        li{
+                            list-style-position: inside;
+                            font-size: var(--font-size-m);
+                            margin: 10px 0;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
 
-                                a{
-                                    text-decoration: none;
-                                    color: white;
-                                    
-                                    &:hover{
-                                        cursor: pointer;
-                                        text-decoration: underline;
-                                    }
-                                }
+@media (max-width: $tb-max-width){
+    .container{
+        .projectCard{
 
-                                li{
-                                    list-style-position: inside;
-                                    font-size: $fs-small-text-font-size;
-                                    margin: 10px 0;
-                                }
-                            }
-                        } 
+            .cardBody{
+                .cardBodyText{
+                    padding: 0 20px;
+                }
+
+                .cardBodyItems{
+                    padding: 0 20px;
+                    flex-direction: column;
+
+                    .cardBodyItem{
+                        margin-bottom: 10px;
+
+                        ul{
+                            padding: 0 0 0 2%;
+                        }
                     }
                 }
             }

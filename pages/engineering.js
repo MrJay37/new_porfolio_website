@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 import Styles from './engineering.module.scss'
 import ProjectData from '../static/projects_data'
 
+
 const formatToYearMonth = (date_obj) => {
   if (!date_obj){
       return 'Now'
@@ -14,8 +15,8 @@ const formatToYearMonth = (date_obj) => {
   return date_string.split(' ')[3] + ' ' + date_string.split(' ')[1]
 }
 
+
 function ProjectCard(props){
-  console.log(props)
   return <div className={Styles.projectCard}>
     <div className={Styles.cardHeader}>
       <img src={props.picture} className={Styles.cardHeaderBanner}/>
@@ -54,13 +55,14 @@ function ProjectCard(props){
   </div>
 }
 
+
 export default function Projects({ props }) {
-    return <Layout home={false} title='Sanket Jain | Projects'>
+    return <Layout home={false} title='Sanket Jain | Engineering'>
       <div className={Styles.container}>
-          <div className={Styles.title}>Engineering Projects</div>
+          <div className={'pagesTitle'}>Engineering</div>
           <div className={Styles.projectCards}>
               {ProjectData.map((project, i) => (
-                <div key={i} className={Styles.projectCardContainer} id={project.id}><ProjectCard {...project}/></div>
+                <div key={i} className={'pagesCardContainer'} id={project.id}><ProjectCard {...project}/></div>
               ))}
           </div>
       </div>

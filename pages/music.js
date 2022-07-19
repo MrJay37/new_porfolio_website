@@ -34,6 +34,12 @@ function MusicMember( props ) {
 
 function MusicProject( props ) {
     return <div className={Styles.musicProject}>
+        <div className={Styles.musicProjectHeader}>
+            <h3>{props.title}</h3>
+            <div className={Styles.musicProjectGenre}>
+                {props.genre.map((genre, g) => <span key={g}>{genre}</span>)}
+            </div>
+        </div>
         {props.embed ? <div className={Styles.musicProjectEmbed} dangerouslySetInnerHTML={{ __html: props.embed }} /> : <></>}
     </div>
 }
@@ -70,12 +76,12 @@ function MusicCard(props){
 export default function Music({ props }) {
     return <Layout home={false} title='Sanket Jain | Music'>
         <div className={Styles.container}>
-            <div className={Styles.title}>
-                Music!
+            <div className={'pagesTitle'}>
+                Music
             </div>
             <div className={Styles.musicCards}>
                 {MusicData.map((music_data, i) => (
-                    <div className={Styles.container} id={music_data.id}><MusicCard {...music_data}/></div>
+                    <div className={'pagesCardContainer'} id={music_data.id}><MusicCard {...music_data}/></div>
                 ))}
             </div>
         </div>

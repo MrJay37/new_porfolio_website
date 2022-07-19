@@ -1,104 +1,124 @@
 @import '../styles/utils.module.scss';
 
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    .educationCard{
+        border: 1px solid var(--theme-secondary-color);
+        border-radius: 2rem;
+        padding: 40px;
+        min-height: 400px;
 
-    .title{
-        font-size: $fs-heading-1-font-size;
-        text-align: center;
-    }
-
-    .CardContainer{
-        padding-top: $fs-header-height;
-        .educationCard{
+        .educationCardHeader{
             display: flex;
-            flex-direction: column;
-            width: 100%;
             justify-content: space-between;
-            border: 1px solid $theme-secondary;
-            padding: 40px;
-            border-radius: 2rem;
-            min-height: 400px;
-            position: static;
 
-            .educationCardHeader{
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
+            .educationCardLogo{
+                img{
+                    height: 200px;
+                    border: 1px solid var(--theme-secondary-color);
+                    border-radius: 1rem;   
+                    overflow: hidden;
+                }
+            }            
+        }
 
-                .educationCardLogo{                     
-                    img{
-                        height: 200px;
-                        border: 1px solid $theme-secondary;
-                        border-radius: 1rem;   
-                        overflow: hidden;
-                    }
-                }            
-            }
+        .educationCardText{
+            text-align: right;
 
-            .educationCardText{
-                padding: 20px;
+            .educationCardDates{
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
-                text-align: right;
+                margin-bottom: 25px;
+                span{
+                    font-weight: var(--font-weight-light);
+                }
+                
+            }
 
-                .educationCardDates{
-                    display: flex;
-                    flex-direction: column;
-                    span{
-                        font-weight: 100;
-                    }
-                    margin-bottom: 25px;
+            .educationCardTitle{
+                margin-bottom: 25px;
+                h2{
+                    font-size: var(--heading-2-font-size);
+                    font-weight: var(--font-weight-normal);
+                    margin: 0;
                 }
 
-                .educationCardTitle{
-                    h2{
-                        font-size: $fs-heading-3-font-size;
-                        padding: 0;
-                        margin: 0;
-                    }
+                .educationCardSchoolLocation{
+                    font-size: var(--font-size-l);
+                    font-weight: var(--font-weight-light)
+                }
 
-                    .educationCardSchoolLocation{
-                        font-size: $fs-normal-text-font-size;
-                        font-weight: 100;
-                    }
+                h3{
+                    font-size: var(--font-size-l);
+                    font-weight: var(--font-weight-normal);
+                    margin: 10px 0 0;
+                }
+            }
+        }
 
-                    h3{
-                        font-size: $fs-normal-text-font-size;
-                        font-weight: 400;
-                        margin: 10px 0 0;
-                    }
+        .educationCardBody{
+            .educationCardBodyCourses{
+                margin: 10px 0;
 
-                    margin-bottom: 25px;
+                .educationCardBodyCoursesList{
+                    display: flex;
+                    flex-direction: row-reverse;
+
+                    span{
+                        border: 1px solid var(--theme-secondary-color);
+                        margin: 0 10px;
+                        font-size: var(--font-size-s);
+                        padding: 5px 10px;
+                        border-radius: 1rem;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            .educationCardBodyDescription{
+                text-align: justify;
+                font-size: var(--font-size-m);
+            }
+        }
+    }
+}
+
+@media (max-width: $tb-max-width) {
+    .container{
+        .educationCard{
+            padding: 30px;
+            .educationCardHeader{
+                flex-direction: column;
+                align-items: center;
+
+                .educationCardLogo{
+                    img{
+                        max-height: 200px;
+                    }
+                }
+
+                .educationCardText{
+                    text-align: center;
+                    margin-top: 15px;
+    
+                    .educationCardDates{
+                        flex-direction: row;
+                        justify-content: center;
+                    }
                 }
             }
 
             .educationCardBody{
                 .educationCardBodyCourses{
-                    margin: 10px 0;
-
                     .educationCardBodyCoursesList{
-                        display: flex;
-                        flex-direction: row-reverse;
+                        flex-wrap: wrap;
+                        justify-content: center;
 
                         span{
-                            border: 1px solid $theme-secondary;
-                            margin: 0 10px;
-                            padding: 5px 10px;
-                            border-radius: 1rem;
-                            flex-wrap: wrap;
+                            margin: 10px;
+                            text-align: center;
+                            font-size: var(--font-size-m);
                         }
                     }
-
-                }
-
-                .educationCardBodyDescription{
-                    margin: 20px 0;
-                    text-align: justify;
-                    font-size: $fs-small-text-font-size;
                 }
             }
         }
