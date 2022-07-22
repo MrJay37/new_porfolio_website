@@ -26,17 +26,17 @@
             }
 
             .contactFormItemField{
-                width: 60%;
-                height: 40px;
+                width: var(--contact-form-input);
+                height: var(--contact-form-input-height);
                 border-radius: 2rem;
                 padding: 0 15px;
                 font-size: var(--font-size-l);
             }
 
             .contactFormItemTextarea{
-                width: 60%;
-                max-width: 60%;
-                height: 160px;
+                width: var(--contact-form-input);
+                max-width: var(--contact-form-input);
+                height: var(--contact-form-textarea-height);
                 border-radius: 2rem;
                 padding: 15px;
                 font-size: var(--font-size-l);

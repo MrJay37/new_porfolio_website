@@ -20,6 +20,9 @@ $sp-max-width: 480px;
   --skills-chart-bar-beam-height: 640px;
   --vertical-spacing-margin: 30px auto;
   --card-content-padding: 15px 20px;
+  --contact-form-input: 60%;
+  --contact-form-input-height: 40px;
+  --contact-form-textarea-height: 160px;
 
   // Font sizes
   --heading-1-font-size: 96px;
@@ -44,6 +47,8 @@ $sp-max-width: 480px;
     --layout-container-width: 85%;
     --header-height: 60px;
     --footer-height: 60px;
+    --contact-form-input: 90%;
+    --contact-form-textarea-height: 120px;
 
     --vertical-spacing-margin: 20px auto;
 

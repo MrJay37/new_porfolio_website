@@ -23,6 +23,7 @@ export default function Contact(){
     const [error, setError] = useState(false)
     const [notificationMessage, setNotificationMessage] = useState('Error message')
     const [showNotification, setShowNotification] = useState(false)
+    const [waiting, setWaiting] = useState(false)
 
     const sendMessage = async (evt) => {
         setShowNotification(false)
@@ -48,26 +49,27 @@ export default function Contact(){
         }
 
         else{
-            // let res = await fetch(
-            //     'https://ra257dy6pa.execute-api.us-east-2.amazonaws.com/Live/contact',
-            //     {
-            //         method: 'POST',
-            //         headers: {
-            //             'Content-Type': 'application/json'
-            //         },
-            //         body: JSON.stringify({
-            //             'name': name,
-            //             'email': email,
-            //             'message': message
-            //         })
-            //     }
-            // )
-            // let data = await res.json()
-
-            // let res_message = JSON.parse(data['body'])
-            let res_message = {
-                'message': 'Email sent successfully'
-            }
+            setWaiting(true)
+            let res = await fetch(
+                'https://ra257dy6pa.execute-api.us-east-2.amazonaws.com/Live/contact',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        'name': name,
+                        'email': email,
+                        'message': message
+                    })
+                }
+            )
+            let data = await res.json()
+            setWaiting(false)
+            let res_message = JSON.parse(data['body'])
+            // let res_message = {
+            //     'message': 'Email sent successfully'
+            // }
             
             setNotificationMessage(res_message['message'])
             setName('')
@@ -110,9 +112,9 @@ export default function Contact(){
                     <label htmlFor={'contactFormName'} className={Styles.contactFormItemLabel}>Message</label>
                     <textarea id="contactFormName" className={Styles.contactFormItemTextarea} onChange={evt => setMessage(evt.target.value)} value={message} />
                 </div>
-                <button className={Styles.contactFormSubmitButton} type='submit'>
+                {!waiting ? <button className={Styles.contactFormSubmitButton} type='submit'>
                     Send
-                </button>
+                </button> : <></>}
             </form>
         </div>
     </Layout>
