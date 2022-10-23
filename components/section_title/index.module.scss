@@ -1,0 +1,7 @@
+.sectionTitle{
+    margin: var(--header-height) 0;
+    font-size: var(--heading-1-font-size);
+    text-align: center;
+    font-weight: var(--font-weight-normal);
+    &:hover{cursor: pointer}
+}

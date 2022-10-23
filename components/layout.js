@@ -38,7 +38,7 @@ function Header({ home }) {
     {
       'id': 'education',
       'displayText': 'Education',
-      'to': '/education'
+      'to': '#education'
     },
     {
       'id': 'work',
@@ -119,7 +119,6 @@ function Banner() {
   </div>
 }
 
-
 function Footer () {
   return <div className={styles.footerContainer}>
       <footer>
@@ -128,15 +127,15 @@ function Footer () {
   </div>
 }
 
-export default function Layout({ children, home, title }) {
+export default function Layout({ children, title }) {
   return <>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/images/Icon.png" />
       </Head>
       <div className={styles.appContainer}>
-        <Header home={home}/>
-          {home && <Banner />}
+        <Header />
+          <Banner />
           <div className={styles.container}>
             {children}
           </div>
