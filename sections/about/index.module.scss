@@ -1,0 +1,83 @@
+@import '../../styles/utils.module.scss';
+
+.container{
+    width: 100%;
+    object-fit: contain;
+
+    .banner{
+        width: inherit;   
+        display: block;
+        object-fit: cover;
+        max-height: 80vh;
+        
+    }
+
+    .bannerText{
+        width: inherit;
+        padding: 50px;
+        margin: 0;
+
+        background-color: var(--theme-medium-light);
+
+        color: var(--font-color-black);
+        text-align: center;
+        font-size: var(--heading-2-font-size);
+        font-weight: var(--font-weight-normal);
+        text-transform: uppercase;
+    }
+
+    .intro{
+        background-color: var(--theme-light);
+        width: 100%;
+
+        .container{
+            max-width: var(--max-container-width);
+            margin: auto;
+
+            .aboutText{
+                margin: auto;
+                color: var(--font-color-black);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 5%;
+    
+                h3{
+                    font-size: var(--heading-3-font-size);
+                    font-weight: var(--font-weight-normal);
+                    font-family: 'Source Sans Pro';
+                }
+    
+                .text{
+                    text-align: justify;
+                    font-size: var(--font-size-m);
+                    font-weight: var(--font-weight-normal);
+                    font-family: 'Source Sans Pro';
+                }
+            }
+    
+            .profilePicture{
+                object-fit: contain;
+                width: 100%;
+                height: auto;
+                max-width: 50%;
+                
+            }
+        }
+
+        .barContainer{
+            padding: var(--header-height) 0;
+            max-width: 1280px;
+            margin: auto;
+
+            h3{
+                color: var(--font-color-dark);
+                text-align: center;
+                font-size: var(--heading-2-font-size);
+                font-weight: var(--font-weight-normal);
+                font-family: 'Source Sans Pro';
+            }
+
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.container{
+    padding: var(--header-height) 0;
+    margin: auto;
+    background-color: var(--theme-light);
+    color: var(--font-color-dark);
+    
+    .list{
+        max-width: 1128px;
+        margin: auto;
+        .workExCard{
+            border: var(--theme-dark) solid 1px;
+            .workExCardTitle{
+                font-family: 'Source Sans Pro';
+                justify-content: space-between;    
+                align-items: center;
+                
+                .WorkExCardTitleText{
+                    h1{
+                        margin: 5px 0;
+                        font-size: var(--heading-3-font-size);
+                        font-weight: var(--font-weight-normal);
+                    }
+        
+                    h3{
+                        margin: 5px 0;
+                        font-size: var(--font-size-m);
+                        font-weight: var(--font-weight-normal);
+                    }
+
+                    p{
+                        margin: 10px 0;
+                        font-size: var(--font-size-m);
+                    }
+                }
+
+                .workExCardTitleDates{
+                    text-align: right;
+                    font-size: var(--font-size-m);
+                }   
+            }
+        }
+    }
+}

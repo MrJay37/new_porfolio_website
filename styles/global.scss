@@ -1,5 +1,5 @@
 // Global variables
-$background-color: black;
+$background-color: #333333;
 $theme-secondary: #FFD700;
 
 $tb-max-width: 1024px;
@@ -7,15 +7,19 @@ $sp-max-width: 480px;
 
 :root{
   // Constants
-  --theme-primary-color: black;
+  --theme-dark: #333333;
+  --theme-medium-dark: #777;
+  --theme-medium-light: #AAA;
+  --theme-light: #DDD;
   --theme-secondary-color: #FFD700;
+  --max-container-width: 1440px;
   --tb-max-width: 1024px;
   --sp-max-width: 480px;
 
 
   // Dimensions
   --layout-container-width: 90%;
-  --header-height: 80px;
+  --header-height: 60px;
   --footer-height: 80px;
   --skills-chart-bar-beam-height: 640px;
   --vertical-spacing-margin: 30px auto;
@@ -38,7 +42,14 @@ $sp-max-width: 480px;
   --font-weight-light: 100;
   --font-weight-normal: 400;
   --font-weight-heavy: 700;
-    
+  
+
+  // Font colors
+  --font-color-black: #111;
+  --font-color-dark: #333333;
+  --font-color-medium-dark: #777;
+  --font-color-medium-light: #AAA;
+  --font-color-light: #DDD;
 }
 
 @media (max-width: 1024px) {
@@ -84,9 +95,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Fjalla One', 'Raleway', sans-serif;
   color: white;
-  background-color: black;
+  background-color: #333333;
 }
 
 * {
@@ -103,20 +114,21 @@ a:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
+  display: block;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $theme-secondary;
+  background: #777;
   border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-track{
-  background-color: transparent;
+  background-color: #111111;
 }
 
 ::-webkit-scrollbar-track-piece{
-  background-color: transparent;
+  background-color: #111111;
 }
 
 ::-webkit-scrollbar-corner {
@@ -139,7 +151,7 @@ a:hover {
 }
 
 .cardBorder{
-  border: $theme-secondary solid 1px;
+  // border: $theme-secondary solid 1px;
   border-radius: 0.5em;
   overflow: hidden;
   margin: var(--vertical-spacing-margin);

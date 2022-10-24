@@ -1,0 +1,69 @@
+@import '../../styles/utils.module.scss';
+
+.musicProjects{
+    background-color: var(--theme-light);
+    color: var(--font-color-dark);
+    padding: var(--header-height) 0;
+    margin: auto;
+
+    .projectCards{
+        max-width: 1128px;
+        margin: auto;
+
+        .projectCard{
+            font-family: 'Source Sans Pro';
+            // Card is border to border here
+            border: var(--theme-dark) solid 2px;
+            padding: 0;
+
+            .projectCardTitle{
+                
+                max-width: 600px;
+            }
+
+            .projectCardText{
+                display: flex;
+                flex-direction: column;
+                padding: 0 50px;
+                justify-content: center;
+                
+                h3{
+                    font-size: var(--heading-2-font-size);
+                    font-family: 'Fjalla One';
+                }
+
+                .tagContainer{
+                    display: flex;
+                    flex-wrap: wrap;
+                    .tag{
+                        border: 1px solid var(--theme-dark);
+                        border-radius: 1em;
+                        margin: 10px 10px;
+                        padding: 5px 15px;
+                        font-size: var(--font-size-m);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $tb-max-width) {
+    .musicProjects{
+        .projectCards{
+            .projectCard{    
+                .projectCardTitle{
+                    max-width: 100%;
+                }
+    
+                .projectCardText{
+                    .tagContainer{
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
