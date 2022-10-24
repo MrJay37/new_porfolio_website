@@ -158,14 +158,9 @@ a:hover {
   padding: var(--card-content-padding);
 }
 
-.pagesTitle{
-  margin-top: var(--header-height);
-  font-size: var(--heading-1-font-size);
-  text-align: center;
-}
-
-.pagesCardContainer{
-  padding-top: var(--header-height);
+.light_theme_section {
+  background-color: var(--theme-light);
+  color: var(--font-color-black);
 }
 
 .error_background{

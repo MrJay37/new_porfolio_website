@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Layout from "../components/layout";
-import Styles from './contact.module.scss'
+import Styles from './index.module.scss'
+import {SectionTitle} from '../../components'
 
 function Notification(props) {
     return <div className={
@@ -90,10 +90,8 @@ export default function Contact(){
 
     }
 
-    return <Layout home={false} title='Sanket Jain | Contact'>
-        <div className='pagesTitle'>
-            Contact
-        </div>
+    return <>
+        <SectionTitle title='Contact' />
         <div className={Styles.container}>
             <Notification message={notificationMessage} error={error} showNotification={showNotification}/>
             <div className={Styles.greeting}>
@@ -117,5 +115,5 @@ export default function Contact(){
                 </button> : <></>}
             </form>
         </div>
-    </Layout>
+    </>
 }

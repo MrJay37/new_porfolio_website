@@ -3,7 +3,7 @@ import WorkExperienceData from './data'
 import { SectionTitle, formatToYearMonth } from '../../components'
 
 export default function Work() {
-    return <div className={Styles.container}>
+    return <div className={Styles.container + ' light_theme_section'}>
         <SectionTitle title={"Where I've Worked?"} />
         <div className={Styles.list}>
             {WorkExperienceData.map((workData, i) => (

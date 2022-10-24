@@ -4,6 +4,7 @@ import Education from './education'
 import Work from './work'
 import Software from './software'
 import Music from './music'
+import Contact from './contact'
 import Footer from './footer'
 
 export {
@@ -13,5 +14,6 @@ export {
     Work,
     Software,
     Music,
+    Contact,
     Footer
 }

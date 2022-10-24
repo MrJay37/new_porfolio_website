@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 
-import { Header, About, Education, Work, Software, Music, Footer} from '../sections'
+import { Header, About, Education, Work, Software, Music, Contact, Footer} from '../sections'
 
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
         <Work />
         <Software />
         <Music />
+        <Contact />
         <Footer />
     </>
 }

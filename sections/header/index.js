@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useState } from 'react'
 import styles from './index.module.scss'
 import Link from 'next/link'
 
@@ -23,7 +23,7 @@ function NavigationGroup(props){
       )}
       </div>
     </div> 
-  }
+}
 
 export default function Header() {
     const [drawer, showDrawer] = useState(false) 
@@ -37,22 +37,22 @@ export default function Header() {
       {
         'id': 'work',
         'displayText': 'Work',
-        'to': '/work'
+        'to': '#work'
       },
       {
         'id': 'software',
-        'displayText': 'Engineering',
-        'to': '/engineering'
+        'displayText': 'Software',
+        'to': '#software'
       },
       {
         'id': 'music',
         'displayText': 'Music',
-        'to': '/music'
+        'to': '#music'
       },
       {
         'id': 'contact',
         'displayText': 'Contact',
-        'to': '/contact'
+        'to': '#contact'
       }
     ]
   

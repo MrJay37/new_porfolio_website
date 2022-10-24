@@ -8,7 +8,7 @@ ChartJS.register(LinearScale, CategoryScale, BarElement);
 ChartJS.defaults.font.size = 16
 
 export default function About() {
-    return <div className={styles.container}>
+    return <div className={styles.container + ' light_theme_section'}>
         <img className={styles.banner} src='images/banPic2.jpg' />
         <h1 className={styles.bannerText}>
             Hi! I make music and software

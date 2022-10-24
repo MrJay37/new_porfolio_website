@@ -35,6 +35,8 @@
     align-items: center;
     justify-content: space-between;
     transition: all 100ms ease;
+    color: var(--font-color-light);
+    font-weight: 300;
     
     .avatar {
         height: inherit;
@@ -43,6 +45,7 @@
         padding-left: 2vw;
         font-family: 'Source Sans Pro';
         font-size: var(--font-size-l);
+        
 
         &:hover{
             cursor: pointer;
