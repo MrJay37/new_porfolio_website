@@ -1,17 +1,14 @@
 @import '../../styles/utils.module.scss';
 
 .container{
-    .projectCards{
-        max-width: 1128px;
-        margin: auto;
-        .projectCard{
+    .list{
+        .card{
             border: var(--theme-light) solid 2px;
-            color: var(--font-color-light);
             font-family: 'Source Sans Pro';
             
-            .projectCardHeader{
-                align-items: center;
+            .header{
                 justify-content: space-between;
+
                 h3{
                     font-size: var(--heading-3-font-size);
                     font-weight: var(--font-weight-normal);
@@ -25,14 +22,14 @@
             
             .techStackTags{
                 margin: 10px 0 0;
-                display: flex;
                 flex-wrap: wrap;
+                
                 span{
                     margin-right: 10px;
                     margin-bottom: 10px;
                     border: 1px solid var(--theme-medium-light);
                     padding: 5px 10px;
-                    border-radius: 2rem;
+                    border-radius: 1rem;
                     font-size: var(--font-size-s);
                 }
             }

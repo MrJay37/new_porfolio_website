@@ -1,18 +1,11 @@
-.container{
-    padding: var(--header-height) 0;
-    margin: auto;
-    
+.container{    
     .list{
-        max-width: 1128px;
-        margin: auto;
-        .workExCard{
-            border: var(--theme-dark) solid 1px;
-            .workExCardTitle{
+        .card{
+            .title{
                 font-family: 'Source Sans Pro';
                 justify-content: space-between;    
-                align-items: center;
                 
-                .WorkExCardTitleText{
+                .text{
                     h1{
                         margin: 5px 0;
                         font-size: var(--heading-3-font-size);
@@ -31,7 +24,7 @@
                     }
                 }
 
-                .workExCardTitleDates{
+                .dates{
                     text-align: right;
                     font-size: var(--font-size-m);
                 }   

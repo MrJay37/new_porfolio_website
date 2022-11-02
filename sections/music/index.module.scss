@@ -1,29 +1,20 @@
 @import '../../styles/utils.module.scss';
 
-.musicProjects{
-    background-color: var(--theme-light);
-    color: var(--font-color-dark);
-    padding: var(--header-height) 0;
-    margin: auto;
-
-    .projectCards{
+.container{
+    .list{
         max-width: 1128px;
         margin: auto;
 
-        .projectCard{
+        .card{
             font-family: 'Source Sans Pro';
-            // Card is border to border here
             border: var(--theme-dark) solid 2px;
             padding: 0;
 
-            .projectCardTitle{
-                
+            .poster{
                 max-width: 600px;
             }
 
-            .projectCardText{
-                display: flex;
-                flex-direction: column;
+            .text{
                 padding: 0 50px;
                 justify-content: center;
                 
@@ -33,14 +24,12 @@
                 }
 
                 .tagContainer{
-                    display: flex;
                     flex-wrap: wrap;
                     .tag{
                         border: 1px solid var(--theme-dark);
                         border-radius: 1em;
                         margin: 10px 10px;
                         padding: 5px 15px;
-                        font-size: var(--font-size-m);
                     }
                 }
             }

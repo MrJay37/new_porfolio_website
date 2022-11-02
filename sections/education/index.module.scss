@@ -1,45 +1,48 @@
 @import '../../styles/utils.module.scss';
 
 .container{
-    max-width: 1128px;
-    padding: var(--header-height) 0;
-    margin: auto;
-
-    .educationList{
+    .list{
         border-left: 1px dashed white;
         
-        .educationCard{
-            font-family: 'Source Sans Pro';
+        .card{
             justify-content: space-between;
+            font-family: 'Source Sans Pro';
             margin: 10px 0;
-            padding: 0 10px 10px 0;            
+            position: relative;
 
-            .educationCardDates{
+            .dates{
                 justify-content: space-between;
-
-                .educationCardTitleDate{
-                    font-size: var(--font-size-m);
-                }
+                width: 10%;
             }
+            
+            .school{
+                width: 90%;
+                justify-content: flex-end;
+                max-height: 200px;
+                .text{
+                    text-align: right;
 
-            .educationCardText{
-                text-align: right;
-                
-                h1{
-                    font-size: var(--heading-3-font-size);
-                    font-weight: var(--font-weight-normal);
-                    margin: 0 0 10px 0;
-                }
+                    a{
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                    
+                    h1{
+                        font-size: var(--heading-3-font-size);
+                        font-weight: var(--font-weight-normal);
+                        margin: 0 0 10px 0;
+                    }
 
-                h3{
-                    margin: 0;
-                    font-size: var(--font-size-l);
-                    font-weight: var(--font-weight-light);
-                }
+                    h3{
+                        margin: 0;
+                        font-size: var(--font-size-l);
+                        font-weight: var(--font-weight-light);
+                    }
 
-                p {
-                    font-size: var(--font-size-m);
-                    font-weight: var(--font-weight-light);
+                    p {
+                        font-size: var(--font-size-m);
+                        font-weight: var(--font-weight-light);
+                    }
                 }
             }
         }

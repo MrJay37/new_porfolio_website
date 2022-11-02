@@ -1,19 +1,31 @@
 import { useState } from "react";
 import Styles from './index.module.scss'
-import {SectionTitle} from '../../components'
+import {AiFillGithub, AiFillLinkedin, AiFillYoutube, AiFillInstagram} from 'react-icons/ai'
 
-function Notification(props) {
-    return <div className={
-        Styles.notification 
-        + (props.error ? ' error_background' : ' success_background')
-        }
-        style={{
-            transform: props.showNotification ? 'translate(-50%, -80%) translateX(0%)' : ' translate(-50%, -80%) translateX(400%)',
-            filter: props.showNotification ? 'opacity(1)' : 'opacity(0)'
-        }}    
-    >
-        {props.message}
-    </div>
+
+// function Notification(props) {
+//     return <div className={
+//         Styles.notification 
+//         + (props.error ? ' error_background' : ' success_background')
+//         }
+//         style={{
+//             transform: props.showNotification ? 'translate(-50%, -80%) translateX(0%)' : ' translate(-50%, -80%) translateX(400%)',
+//             filter: props.showNotification ? 'opacity(1)' : 'opacity(0)'
+//         }}    
+//     >
+//         {props.message}
+//     </div>
+// }
+
+function DocItem(doc) {
+    return <div className={Styles.docItem}>
+        <div className={Styles.docText}>
+            {doc.text}
+        </div>
+        <button className={Styles.docButton} onClick={doc.docButtonAction}>
+            {doc.docButtonText}
+        </button>
+        </div>
 }
 
 export default function Contact(){
@@ -90,30 +102,89 @@ export default function Contact(){
 
     }
 
-    return <>
-        <SectionTitle title='Contact' />
-        <div className={Styles.container}>
-            <Notification message={notificationMessage} error={error} showNotification={showNotification}/>
-            <div className={Styles.greeting}>
-                Thank you for visiting my website! Leave me a message if you have any questions!
-            </div>
+    return <div className={Styles.container + ' section'} id='contact'>
+        <div className="sectionTitle">Contact</div>
+        {/* <Notification message={notificationMessage} error={error} showNotification={showNotification}/> */}
+        <div className={Styles.greeting}>
+            Thank you for visiting my website! Leave me a message if you have any questions!
+        </div>
+        <div className={Styles.contactContainer + ' sectionContainer'}>
             <form className={Styles.contactForm} onSubmit={sendMessage}>
                 <div className={Styles.contactFormItem}>
-                    <label htmlFor={'contactFormName'} className={Styles.contactFormItemLabel}>Name</label>
-                        <input id="contactFormName" className={Styles.contactFormItemField} placeholder="What can I call you?" onChange={evt => setName(evt.target.value)} value={name} />
+                    <label 
+                        htmlFor={"contactFormName"} 
+                        className={Styles.contactFormItemLabel
+                    }>
+                        Name
+                    </label>
+                    <input 
+                        id={"contactFormName"} 
+                        className={Styles.contactFormItemField} 
+                        placeholder="What can I call you?" 
+                        onChange={evt => setName(evt.target.value)} 
+                        value={name} 
+                    />
                 </div>
                 <div className={Styles.contactFormItem}>
-                    <label htmlFor={'contactFormName'} className={Styles.contactFormItemLabel}>Email</label>
-                    <input id="contactFormName" className={Styles.contactFormItemField} placeholder="I'll reply back on this" onChange={evt => setEmail(evt.target.value)} value={email} />
+                    <label 
+                        htmlFor={'contactFormName'} 
+                        className={Styles.contactFormItemLabel}
+                    >
+                        Email
+                    </label>
+                    <input 
+                        id="contactFormName" 
+                        className={Styles.contactFormItemField} 
+                        placeholder="I'll reply back on this" 
+                        onChange={evt => setEmail(evt.target.value)} 
+                        value={email} 
+                    />
                 </div>
                 <div className={Styles.contactFormItem}>
-                    <label htmlFor={'contactFormName'} className={Styles.contactFormItemLabel}>Message</label>
-                    <textarea id="contactFormName" className={Styles.contactFormItemTextarea} onChange={evt => setMessage(evt.target.value)} value={message} />
+                    <label 
+                        htmlFor={'contactFormName'} 
+                        className={Styles.contactFormItemLabel}
+                    >
+                        Message
+                    </label>
+                    <textarea 
+                        id="contactFormName" 
+                        className={Styles.contactFormItemTextarea} 
+                        onChange={evt => setMessage(evt.target.value)} 
+                        value={message} 
+                    />
                 </div>
                 {!waiting ? <button className={Styles.contactFormSubmitButton} type='submit'>
                     Send
                 </button> : <></>}
             </form>
+            <div className={Styles.documents}>
+                <div className={Styles.docBox}>
+                    <div className={Styles.docs}>
+                        <DocItem 
+                            text={'Download my resume here!'} 
+                            docButtonAction={() => console.log('click')}
+                            docButtonText={'Resume'}
+                        />
+                        <DocItem 
+                            text={'Download my favorite meme here!'} 
+                            docButtonAction={() => console.log('click')}
+                            docButtonText={'Meme'}
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-    </>
+        <div className={Styles.footer + ' flex-center-align'}>
+            <div className={Styles.trademark}>
+                &#169; 2022 Sanket Jain 
+            </div>
+            <div className={Styles.socials}>
+                <span><AiFillLinkedin /></span>
+                <span><AiFillGithub/></span>
+                <span><AiFillYoutube /></span>
+                <span><AiFillInstagram /></span>
+            </div>
+        </div>
+    </div>
 }

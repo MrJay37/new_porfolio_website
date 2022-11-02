@@ -28,6 +28,10 @@
 }
 
 .header{
+    z-index: 1;
+    position: fixed;
+    background-color: var(--theme-dark);
+    border-bottom: 1px solid var(--theme-light);
     width: 100%;
     top: 0;
     height: var(--header-height);

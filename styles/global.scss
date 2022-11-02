@@ -1,10 +1,15 @@
+// Root settings
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Fjalla One', 'Raleway', sans-serif;
+  color: white;
+  background-color: #333333;
+}
+
+* {box-sizing: border-box}
+
 // Global variables
-$background-color: #333333;
-$theme-secondary: #FFD700;
-
-$tb-max-width: 1024px;
-$sp-max-width: 480px;
-
 :root{
   // Constants
   --theme-dark: #333333;
@@ -12,7 +17,7 @@ $sp-max-width: 480px;
   --theme-medium-light: #AAA;
   --theme-light: #DDD;
   --theme-secondary-color: #FFD700;
-  --max-container-width: 1440px;
+  --max-container-width: 1128px;
   --tb-max-width: 1024px;
   --sp-max-width: 480px;
 
@@ -24,7 +29,7 @@ $sp-max-width: 480px;
   --skills-chart-bar-beam-height: 640px;
   --vertical-spacing-margin: 30px auto;
   --card-content-padding: 15px 20px;
-  --contact-form-input: 60%;
+  --contact-form-input-width: 80%;
   --contact-form-input-height: 40px;
   --contact-form-textarea-height: 160px;
 
@@ -90,29 +95,6 @@ $sp-max-width: 480px;
 }
 
 
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Fjalla One', 'Raleway', sans-serif;
-  color: white;
-  background-color: #333333;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   display: block;
@@ -135,14 +117,14 @@ a:hover {
   background: none;
 }
 
-@media(min-width: 1025px){
-  .HeaderMenuDrawer{
-    display: none;
-  }
-}
-
+// ClassName base CSS Rules
 .flex{
   display: flex;
+}
+
+.flex-center-align{
+  display: flex;
+  align-items: center;
 }
 
 .flex-column {
@@ -150,12 +132,30 @@ a:hover {
   flex-direction: column;
 }
 
-.cardBorder{
-  // border: $theme-secondary solid 1px;
-  border-radius: 0.5em;
-  overflow: hidden;
-  margin: var(--vertical-spacing-margin);
-  padding: var(--card-content-padding);
+.flex-column-center-align{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.section{
+  width: 100%;
+  margin: var(--header-height) auto;
+}
+
+.sectionContainer{
+  width: 80%;
+  max-width: var(--max-container-width);
+  margin: auto;
+  padding: 20px 0;
+}
+
+.sectionTitle{
+  padding: var(--header-height) 0;
+  font-size: var(--heading-1-font-size);
+  text-align: center;
+  font-weight: var(--font-weight-normal);
 }
 
 .light_theme_section {
@@ -163,11 +163,19 @@ a:hover {
   color: var(--font-color-black);
 }
 
-.error_background{
-  background-color: rgba(255, 0, 0, 0.95)
+.normal-text{
+  text-align: justify;
+  font-size: var(--font-size-m);
+  font-family: 'Source Sans Pro';
 }
 
-.success_background{
-  background-color: rgba(0, 255, 0, 0.95);
-  color: black;
+.detail_text{
+
+}
+
+.cardBorder{
+  border: 1px solid var(--theme-dark);
+  overflow: hidden;
+  margin: var(--vertical-spacing-margin);
+  padding: var(--card-content-padding);
 }

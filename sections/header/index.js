@@ -59,18 +59,14 @@ export default function Header() {
     return <div className={styles.header}>
           <Link href='/'>
             <div className={styles.avatar}>
-              <span>
-                Sanket Jain
-              </span>
-              <HambugerButton
+              <span>Sanket Jain</span>
+              {/* <HambugerButton
                 className={styles.HambugerButton + ' HeaderMenuDrawer'}
                   onClick={(evt) => {
                     evt.preventDefault(); showDrawer(!drawer)
                   }} 
-                  style={{
-                      transform: drawer ? 'rotate(90deg)' : 'rotate(0)'
-                  }}
-              />
+                  style={{transform: drawer ? 'rotate(90deg)' : 'rotate(0)'}}
+              /> */}
             </div>
           </Link>
           

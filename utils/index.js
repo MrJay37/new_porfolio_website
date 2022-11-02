@@ -1,5 +1,3 @@
-import SectionTitle from "./section_title";
-
 const formatToYearMonth = (date_obj) => {
     if (!date_obj){
         return 'Now'
@@ -13,6 +11,5 @@ const formatToYearMonth = (date_obj) => {
 }
 
 export {
-    SectionTitle,
     formatToYearMonth
 }
