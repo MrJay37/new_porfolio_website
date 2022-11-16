@@ -1,34 +1,51 @@
 .container{    
     .list{
         .card{
-            .title{
-                font-family: 'Source Sans Pro';
-                justify-content: space-between;    
-                
-                .text{
-                    h1{
-                        margin: 5px 0;
-                        font-size: var(--heading-3-font-size);
-                        font-weight: var(--font-weight-normal);
+            .cardHeader{
+                .title{
+                    font-family: 'Source Sans Pro';
+                    justify-content: space-between;    
+                    align-items: stretch;
+                    
+                    .text{
+                        h1{
+                            margin: 5px 0;
+                            font-size: var(--heading-3-font-size);
+                            font-weight: var(--font-weight-normal);
+                        }
+            
+                        h3{
+                            margin: 5px 0;
+                            font-size: var(--font-size-m);
+                            font-weight: var(--font-weight-normal);
+                        }
+    
+                        p{
+                            margin: 10px 0;
+                            font-size: var(--font-size-m);
+                        }
                     }
-        
-                    h3{
-                        margin: 5px 0;
+    
+                    .dates{
+                        justify-content: space-between;
+                        text-align: right;
                         font-size: var(--font-size-m);
-                        font-weight: var(--font-weight-normal);
-                    }
-
-                    p{
-                        margin: 10px 0;
-                        font-size: var(--font-size-m);
-                    }
+                    }   
                 }
-
-                .dates{
-                    text-align: right;
-                    font-size: var(--font-size-m);
-                }   
             }
+
+            .cardBody{
+                padding: 20px 0;
+                font-family: 'Source Sans Pro';
+
+                .cardDivider{
+                    height: 1px;
+                    background-color: var(--theme-medium-light);
+
+                    
+                }
+            }
+            
         }
     }
 }

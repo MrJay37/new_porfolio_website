@@ -12,7 +12,7 @@ function HambugerButton(props) {
           </button>
       </div>
   </div>
-}
+}  
 
 function NavigationGroup(props){
     return <div className={styles.navigationDrawer}>

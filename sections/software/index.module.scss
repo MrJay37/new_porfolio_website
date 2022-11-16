@@ -6,33 +6,60 @@
             border: var(--theme-light) solid 2px;
             font-family: 'Source Sans Pro';
             
-            .header{
-                justify-content: space-between;
+            .main{
+                .header{
+                    justify-content: space-between;
+    
+                    h3{
+                        font-size: var(--heading-3-font-size);
+                        font-weight: var(--font-weight-normal);
+                        margin: 0;
+                    }
+    
+                    span{
+                        font-size: var(--font-size-m);
+                    }
+                }
+                
+                .techStackTags{
+                    margin: 10px 0 0;
+                    flex-wrap: wrap;
+                    
+                    span{
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                        border: 1px solid var(--theme-medium-light);
+                        padding: 5px 10px;
+                        border-radius: 1rem;
+                        font-size: var(--font-size-s);
+                    }
+                }
+            }
 
-                h3{
-                    font-size: var(--heading-3-font-size);
-                    font-weight: var(--font-weight-normal);
-                    margin: 0;
+            .expand{
+                margin-top: 20px;
+                width: 100%;
+                align-items: center;
+
+                .switch{
+                    text-align: center;
+                    width: 100%;
+                    cursor: pointer;
                 }
 
-                span{
-                    font-size: var(--font-size-m);
+                .expandBody{
+                    margin-top: 20px;
+
+                    .expandBodyImage{
+                        width: 50%;
+                    }
+
+                    .expandBodyContent{
+                        padding: 0 20px;
+                    }
                 }
             }
             
-            .techStackTags{
-                margin: 10px 0 0;
-                flex-wrap: wrap;
-                
-                span{
-                    margin-right: 10px;
-                    margin-bottom: 10px;
-                    border: 1px solid var(--theme-medium-light);
-                    padding: 5px 10px;
-                    border-radius: 1rem;
-                    font-size: var(--font-size-s);
-                }
-            }
         }
     }
 }
