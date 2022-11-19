@@ -49,13 +49,17 @@
     }
 }
 
-@media (max-width: $tb-max-width) {
-    .whatIHaveStudied{
-        .educationList{           
-            .educationCard{
-                .educationCardDates{
-                    min-width: 25%;
+@media (max-width: $small-screen) {
+    .container{
+        .list{        
+            .card{
+                .dates{
+                    font-size: var(--font-size-s);
+                    justify-content: space-between;
+                    width: 20%;
                 }
+                
+                .school{ width: 80%; }
             }
         }
     }

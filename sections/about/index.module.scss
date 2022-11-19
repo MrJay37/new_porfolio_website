@@ -23,13 +23,13 @@
     }
 
     .intro{
-        .container{
-            h3{
-                font-size: var(--heading-2-font-size);
-                font-weight: var(--font-weight-normal);
-                font-family: 'Source Sans Pro';
-            }
+        h3{
+            font-size: var(--heading-2-font-size);
+            font-weight: var(--font-weight-normal);
+            font-family: 'Source Sans Pro';
+        }
 
+        .container{
             .aboutText{
                 padding: 0 5%;
             }
@@ -38,6 +38,25 @@
                 margin-top: 5vh;
                 max-height: 600px;
                 max-width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: $small-screen) {
+    .container{
+        .intro{
+            .container{
+                flex-direction: column-reverse;
+
+                .profilePicture{
+                    margin-top: none;
+                    max-width: 100%;
+                }
+            }
+
+            .barContainer{
+                display: none;
             }
         }
     }

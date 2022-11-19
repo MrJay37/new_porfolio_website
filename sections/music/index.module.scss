@@ -8,28 +8,120 @@
         .card{
             font-family: 'Source Sans Pro';
             border: var(--theme-dark) solid 2px;
+            position: relative;
             padding: 0;
+            
+            .header{
+                .poster{
+                    max-width: 60%;
+                }
+    
+                .text{
+                    padding: 0 50px;
+                    justify-content: center;
+                    
+                    h3{
+                        font-size: var(--heading-2-font-size);
+                        font-family: 'Fjalla One';
+                    }
+    
+                    .tagContainer{
+                        flex-wrap: wrap;
+                        .tag{
+                            border: 1px solid var(--theme-dark);
+                            border-radius: 1em;
+                            margin: 10px 10px;
+                            padding: 5px 15px;
+                        }
+                    }
 
-            .poster{
-                max-width: 600px;
+                }
             }
 
-            .text{
-                padding: 0 50px;
-                justify-content: center;
-                
-                h3{
-                    font-size: var(--heading-2-font-size);
-                    font-family: 'Fjalla One';
+            .expand{
+                padding: 50px;
+                background-color: var(--theme-dark);
+                color: white;
+
+                h1{
+                    text-align: center;
+                    font-weight: var(--font-weight-normal);
                 }
 
-                .tagContainer{
+                .members{
                     flex-wrap: wrap;
-                    .tag{
-                        border: 1px solid var(--theme-dark);
-                        border-radius: 1em;
-                        margin: 10px 10px;
-                        padding: 5px 15px;
+                    align-items: center;
+                    justify-content: center;
+                    align-items: stretch;
+                    min-height: 250px;
+                    margin-bottom: 50px;
+
+                    .member{
+                        border: 1px solid var(--theme-light);
+                        padding: 5px 10px;
+                        margin: 0 10px;
+                        max-width: 140px;
+                        text-align: center;
+                        justify-content: space-around;
+
+                        h4{
+                            font-weight: var(--font-weight-normal);
+                            font-size: var(--font-size-l);
+                            margin: 10px 0 0;
+                        }
+
+                        .artForms{
+                            justify-self: flex-start;
+                            justify-content: flex-start;
+                        }
+
+                        .links{
+                            padding: 0 10%;
+                            font-size: var(--font-size-xl);
+                            justify-content: space-around;
+                            justify-self: flex-end;
+                            a{
+                                color: inherit
+                            };
+                        }
+                        
+                    }
+                }
+
+                .divide{
+                    height: 1px;
+                    width: 100%;
+                    background-color: var(--theme-light);
+                }
+
+                .projects{
+                    width: 100%;
+                    align-items: center;
+                    .project{
+                        width: 100%;
+
+                        .projectEmbed{
+                            width: 100%;
+
+                            iframe{
+                                width: 50%;
+                                min-height: 300px;
+                                margin: auto
+                            }
+                        }
+
+                        .projectTitle{
+                            margin-top: 10px;
+                            font-size: var(--heading-3-font-size);
+                            text-align: center;
+                        }
+
+                        .projectGenre{
+                            width: 100%;
+                            text-align: center;
+                            margin: 10px 0;
+                            margin-bottom: 50px;
+                        }
                     }
                 }
             }
@@ -37,20 +129,96 @@
     }
 }
 
-@media (max-width: $tb-max-width) {
-    .musicProjects{
-        .projectCards{
-            .projectCard{    
-                .projectCardTitle{
-                    max-width: 100%;
+@media (max-width: $small-screen) {
+    .container{
+        .list{
+            .card{
+                font-family: 'Source Sans Pro';
+                border: var(--theme-dark) solid 1px;
+                
+                .header{
+                    .poster{
+                        max-width: 100%;
+                    }
+        
+                    .text{
+                        padding: 0;
+                        margin: auto;
+                        justify-content: center;
+    
+                        h3{
+                            margin: 10px 0;
+                        }
+        
+                        .tagContainer{
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            justify-content: center;
+
+                            .tag{
+                                border: 1px solid var(--theme-dark);
+                                border-radius: 1em;
+                                margin: 5px 5px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
                 }
     
-                .projectCardText{
-                    .tagContainer{
-                        justify-content: center;
-                        align-items: center;
+                .expand{
+                    padding: 10px;
+                    background-color: var(--theme-dark);
+                    color: white;
+    
+                    h1{
+                        text-align: center;
+                        font-weight: var(--font-weight-normal);
                     }
-                    margin-bottom: 20px;
+    
+                    .members{
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        align-items: stretch;
+                        min-height: inherit;
+                        margin-bottom: 50px;
+
+                        .member{
+                            border: 1px solid var(--theme-light);
+                            padding: 2px 5px;
+                            margin: 5px 10px;
+                            min-width: 120px;
+                            min-height: 160px;
+                            text-align: center;
+                            justify-content: space-around;
+    
+                            .artForms{
+                                font-size: var(--font-size-m);
+                                font-weight: var(--font-weight-light);
+                            }
+    
+                            .links{ font-size: var(--font-size-xl) }
+                        }
+                    }
+    
+                    .divide{
+                        height: 1px;
+                        width: 100%;
+                        background-color: var(--theme-light);
+                    }
+    
+                    .projects{
+                        width: 100%;
+                        align-items: center;
+
+                        .project{
+                            width: 100%;
+    
+                            .projectEmbed{ iframe{ width: 100% } }
+    
+                            .projectGenre{ margin-bottom: 20px; }
+                        }
+                    }
                 }
             }
         }

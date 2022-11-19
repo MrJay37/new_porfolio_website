@@ -3,38 +3,34 @@ import Styles from './index.module.scss'
 import {AiFillGithub, AiFillLinkedin, AiFillYoutube, AiFillInstagram} from 'react-icons/ai'
 
 
-// function Notification(props) {
-//     return <div className={
-//         Styles.notification 
-//         + (props.error ? ' error_background' : ' success_background')
-//         }
-//         style={{
-//             transform: props.showNotification ? 'translate(-50%, -80%) translateX(0%)' : ' translate(-50%, -80%) translateX(400%)',
-//             filter: props.showNotification ? 'opacity(1)' : 'opacity(0)'
-//         }}    
-//     >
-//         {props.message}
-//     </div>
-// }
+function Notification(props) {
+    return props.showNotification ? <div className={
+        'notification '+ (props.error ? ' error_background' : ' success_background')
+        }  
+    >
+        {props.message}
+    </div>
+    : <></>
+}
 
 function DocItem(doc) {
     return <div className={Styles.docItem}>
         <div className={Styles.docText}>
             {doc.text}
         </div>
-        <button className={Styles.docButton} onClick={doc.docButtonAction}>
-            {doc.docButtonText}
-        </button>
+        <div className={Styles.docButton + ' flex'}>
+            <a target="_blank" href={doc.url}>{doc.docButtonText}</a>
         </div>
+    </div>
 }
 
 export default function Contact(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
-    const [error, setError] = useState(false)
-    const [notificationMessage, setNotificationMessage] = useState('Error message')
+    const [error, setError] = useState(null)
     const [showNotification, setShowNotification] = useState(false)
+    const [notificationMessage, setNotificationMessage] = useState('')
     const [waiting, setWaiting] = useState(false)
 
     const sendMessage = async (evt) => {
@@ -97,14 +93,11 @@ export default function Contact(){
                 setError(false)
             }, 300);
         }, 5000);
-
-
-
     }
 
     return <div className={Styles.container + ' section'} id='contact'>
         <div className="sectionTitle">Contact</div>
-        {/* <Notification message={notificationMessage} error={error} showNotification={showNotification}/> */}
+        <Notification message={notificationMessage} error={error} showNotification={showNotification}/>
         <div className={Styles.greeting}>
             Thank you for visiting my website! Leave me a message if you have any questions!
         </div>
@@ -163,12 +156,12 @@ export default function Contact(){
                     <div className={Styles.docs}>
                         <DocItem 
                             text={'Download my resume here!'} 
-                            docButtonAction={() => console.log('click')}
+                            url="https://drive.google.com/file/d/1Qmynu9CUW_dn51qo57UTkNlVMEoTerkp/view?usp=share_link"
                             docButtonText={'Resume'}
                         />
                         <DocItem 
                             text={'Download my favorite meme here!'} 
-                            docButtonAction={() => console.log('click')}
+                            url="https://drive.google.com/file/d/1mKdCEgv2kd6w902U6iIdmFRmRnhWiyFh/view?usp=sharing"
                             docButtonText={'Meme'}
                         />
                     </div>
@@ -180,10 +173,10 @@ export default function Contact(){
                 &#169; 2022 Sanket Jain 
             </div>
             <div className={Styles.socials}>
-                <span><AiFillLinkedin /></span>
-                <span><AiFillGithub/></span>
-                <span><AiFillYoutube /></span>
-                <span><AiFillInstagram /></span>
+                <span><a target="_blank" href="https://www.linkedin.com/in/sanket-jain-415a606a/"><AiFillLinkedin /></a></span>
+                <span><a target="_blank" href="https://github.com/MrJay37"><AiFillGithub/></a></span>
+                <span><a target="_blank" href="https://www.youtube.com/channel/UC4QOttreVJ4zN6W1uBjtHIQ"><AiFillYoutube /></a></span>
+                <span><a target="_blank" href="https://www.instagram.com/abagauss/"><AiFillInstagram /></a></span>
             </div>
         </div>
     </div>

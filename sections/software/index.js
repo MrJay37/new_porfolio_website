@@ -1,7 +1,8 @@
 import Styles from './index.module.scss'
 import { useState } from 'react'
 import Data from './data'
-import { SlArrowUp, SlArrowDown } from 'react-icons/sl'
+
+import { CardExpand } from '../../components'
 
 function SoftwareCard(props){
     const [open, setOpen] = useState(false)
@@ -18,24 +19,23 @@ function SoftwareCard(props){
                 {props.tech_stack.slice(0, 6).map((ts, i) => <span key={i}>{ts}</span>)}
             </div>
         </div>
-        
         <div className={Styles.expand + ' flex-column'}>
-            <div className={Styles.switch} onClick={() => setOpen(!open)}>
-                {open ? <SlArrowUp />: <SlArrowDown />}
-            </div>
+            <CardExpand open={open} onClick={() => setOpen(!open)}/>
+            {open ? <div className={Styles.divider}></div> :<></>}
             {
-                open? <div className={Styles.expandBody + ' flex'}>
+                open 
+                ? <div className={Styles.expandBody + ' flex'}>
                     <img src={props.picture} className={Styles.expandBodyImage} />
                     <div className={Styles.expandBodyContent}>
-                        <div>
-                            <h4>Members</h4>
+                        <div className={Styles.expandSection}>
+                            <h4 className={Styles.heading}>Project</h4>
                             <p>{props.description}</p>
                         </div>
-                        <div>
-                            <h4>Members</h4>
+                        <div >
+                            <h4 className={Styles.heading}>Members</h4>
                             {props.members.map((member, m) => (
-                                <a href={member.url} target="_blank">
-                                    <span>{member.name}</span>
+                                <a href={member.url} target="_blank" key={m}>
+                                    <div className={Styles.member}>{member.name}</div>
                                 </a>
                             )
                         )}
@@ -45,7 +45,6 @@ function SoftwareCard(props){
                 : <></>
             }
         </div>
-        
     </div>
 }
 
@@ -56,4 +55,4 @@ export default function Software() {
             {Data.map((project, i) => <SoftwareCard key={i} {...project}/>)}
         </div>
     </div>
-  }
+}

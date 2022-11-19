@@ -2,7 +2,7 @@ import Styles from './index.module.scss'
 import Data from './data'
 import { useState } from 'react'
 import { formatToYearMonth } from '../../utils'
-import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io'
+import { CardExpand } from '../../components'
 
 function WorkCard(props) {
     const [open, setOpen] = useState(false)
@@ -19,13 +19,11 @@ function WorkCard(props) {
                     <div>
                         <div>To {formatToYearMonth(props.end)}</div>
                         <div>From {formatToYearMonth(props.start)}</div>
-                    </div>
-                    <div onClick={() => setOpen(!open)}>
-                        {open ? < IoIosArrowDropup/> : <IoIosArrowDropdown />}
-                    </div>                        
+                    </div>             
                 </div>
             </div>
         </div>
+        <CardExpand open={open} onClick={() => setOpen(!open)}/>
         {
         open ? <div className={Styles.cardBody}>
             <div className={Styles.cardDivider} />

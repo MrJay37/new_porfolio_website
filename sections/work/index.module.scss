@@ -1,3 +1,5 @@
+@import '../../styles/utils.module.scss';
+
 .container{    
     .list{
         .card{
@@ -41,11 +43,43 @@
                 .cardDivider{
                     height: 1px;
                     background-color: var(--theme-medium-light);
-
-                    
                 }
             }
-            
+        }
+    }
+}
+
+
+@media (max-width: $small-screen){
+    .container{    
+        .list{
+            .card{
+                .cardHeader{
+                    .title{                        
+                        .text{
+                            h1{margin: 2px 0 }
+                
+                            h3{ margin: 3px 0 }
+        
+                            p{ margin: 7px 0 }
+                        }
+                    }
+                }
+    
+                .cardBody{
+                    padding: 20px 0;
+                    font-family: 'Source Sans Pro';
+                    font-size: var(--font-size-m);
+                    
+                    ul{
+                        padding: 0 0 0 4vw;
+                    }
+                    .cardDivider{
+                        height: 1px;
+                        background-color: var(--theme-medium-light);
+                    }
+                }
+            }
         }
     }
 }

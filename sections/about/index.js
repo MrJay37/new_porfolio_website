@@ -37,9 +37,9 @@ export default function About() {
                 </div>
                 <img src='/images/picOfMe.jpg' className={styles.profilePicture} />
             </div>
-            <div className={styles.container + ' flex-column-center-align'}>
+            <div className={styles.barContainer + ' flex-column-center-align barChart'}>
                 <h3>What do I know?</h3>
-                <Bar 
+                <Bar
                     data={
                         {
                             labels: SkillsData.map((s, i) => s.title),

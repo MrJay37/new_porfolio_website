@@ -3,26 +3,32 @@ import styles from './index.module.scss'
 import Link from 'next/link'
 
 function HambugerButton(props) {
-  return <div className={props.hamburgerIcon}>
-      <div className={styles.container}>
-          <button {...props} >
-              <span />
-              <span />
-              <span />
-          </button>
-      </div>
+  return <div className={props.className}>
+      <button {...props} >
+          <span />
+          <span />
+          <span />
+      </button>
   </div>
 }  
 
 function NavigationGroup(props){
-    return <div className={styles.navigationDrawer}>
-      <div className={styles.navigationMenu}>
-        {props.menu.map((item, i) => <Link key={i} href={item.to}>
+  return <div className={styles.navigationMenu}>
+      {props.menu.map((item, i) => (
+        <Link key={i} href={item.to}>
           <div className={styles.navigationMenuOption}>{item.displayText}</div>
         </Link>
-      )}
-      </div>
-    </div> 
+    ))}
+  </div>
+}
+
+function DrawerNavigation(props){
+  return <div className={styles.navigationDrawer}>
+    {props.menu.map((item, i) => (
+      <Link key={i} href={item.to}>
+        <div className={styles.navigationMenuOption} onClick={props.onClick}>{item.displayText}</div>
+      </Link>
+  ))}</div>
 }
 
 export default function Header() {
@@ -60,18 +66,16 @@ export default function Header() {
           <Link href='/'>
             <div className={styles.avatar}>
               <span>Sanket Jain</span>
-              {/* <HambugerButton
-                className={styles.HambugerButton + ' HeaderMenuDrawer'}
+              <HambugerButton
+                className={styles.hamburgerIcon + ' HeaderMenuDrawer'}
                   onClick={(evt) => {
                     evt.preventDefault(); showDrawer(!drawer)
                   }} 
                   style={{transform: drawer ? 'rotate(90deg)' : 'rotate(0)'}}
-              /> */}
+              />
             </div>
-          </Link>
-          
-          <div className={styles.navigation}>
-            <NavigationGroup menu={menu}/>
-          </div>
+          </Link>          
+          <NavigationGroup menu={menu}/>
+          {drawer ? <DrawerNavigation show={drawer} menu={menu} onClick={() => showDrawer(!drawer)} />: <></>}
       </div>
 }
