@@ -1,12 +1,12 @@
 @import '../../styles/utils.module.scss';
 
 .container{
+    margin: 0;
+    
     .greeting{
         max-width: var(--max-container-width);
         margin: auto;
-        font-size: var(--heading-2-font-size);
         text-align: center;
-        font-family: 'Source Sans Pro';
         font-weight: var(--font-weight-light);
     }
 
@@ -156,7 +156,7 @@
 
     .footer{
         max-width: var(--max-container-width);
-        height: var(--header-height);
+        // height: var(--header-height);
         margin: auto;
         justify-content: space-between;
         
@@ -177,7 +177,7 @@
     }
 }
 
-@media (max-width: $small-screen) {
+@media (max-width: $medium-screen) {
     .container{
         .greeting{ font-size: var(--heading-3-font-size) }
     
@@ -273,17 +273,7 @@
     
         .footer{
             width: 95%;
-            height: calc(var(--header-height) * 2);
-            
-            .trademark{
-                padding: 0;
-            }
-
-            // .socials{
-            //     span{
-                    
-            //     }
-            // }
+            margin-bottom: 15px;
         }
     }
 }

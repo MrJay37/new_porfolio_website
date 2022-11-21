@@ -35,7 +35,7 @@ export default function About() {
                         My mom likes this website.
                     </p>
                 </div>
-                <img src='/images/picOfMe.jpg' className={styles.profilePicture} />
+                <img src='/images/PICOFME.jpg' className={styles.profilePicture} />
             </div>
             <div className={styles.barContainer + ' flex-column-center-align barChart'}>
                 <h3>What do I know?</h3>

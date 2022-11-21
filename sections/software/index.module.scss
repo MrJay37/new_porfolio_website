@@ -94,9 +94,16 @@
                 border: var(--theme-light) solid 1px;
                 font-family: 'Source Sans Pro';
 
-                .main{                    
+                .main{             
+                    .header{
+                        justify-content: space-between;
+        
+                        span{ text-align: right }
+                    }
+
                     .techStackTags{
                         justify-content: center;
+
                         span{
                             font-size: var(--font-size-m);
                             font-weight: var(--font-weight-light);
@@ -126,17 +133,16 @@
                                 text-align: center;
                             }
 
-                            p{ text-align: justify }
-    
-                            a{
-                                text-decoration: none;
-                                color:inherit;
+                            p{ 
+                                text-align: justify;
+                                font-size: var(--font-size-m)
                             }
     
                             .member{
                                 text-align: center;
                                 padding: 0 0 3px 0;
                                 font-weight: var(--font-weight-light);
+                                font-size: var(--font-size-m);
                                 &:hover{ text-decoration: underline }
                             }
                         }

@@ -13,7 +13,7 @@ function HambugerButton(props) {
 }  
 
 function NavigationGroup(props){
-  return <div className={styles.navigationMenu}>
+  return <div className={styles.navigationMenu + ' flex'}>
       {props.menu.map((item, i) => (
         <Link key={i} href={item.to}>
           <div className={styles.navigationMenuOption}>{item.displayText}</div>
@@ -23,7 +23,7 @@ function NavigationGroup(props){
 }
 
 function DrawerNavigation(props){
-  return <div className={styles.navigationDrawer}>
+  return <div className={styles.navigationDrawer + ' flex-column'}>
     {props.menu.map((item, i) => (
       <Link key={i} href={item.to}>
         <div className={styles.navigationMenuOption} onClick={props.onClick}>{item.displayText}</div>
@@ -62,7 +62,8 @@ export default function Header() {
       }
     ]
   
-    return <div className={styles.header}>
+    return <div className={styles.header + ' flex-center-align'}>
+      <div className={styles.content + ' flex-center-align'}>
           <Link href='/'>
             <div className={styles.avatar}>
               <span>Sanket Jain</span>
@@ -77,5 +78,6 @@ export default function Header() {
           </Link>          
           <NavigationGroup menu={menu}/>
           {drawer ? <DrawerNavigation show={drawer} menu={menu} onClick={() => showDrawer(!drawer)} />: <></>}
+      </div>
       </div>
 }

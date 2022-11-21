@@ -59,7 +59,8 @@
                     .member{
                         border: 1px solid var(--theme-light);
                         padding: 5px 10px;
-                        margin: 0 10px;
+                        margin: 10px;
+                        min-height: 220px;
                         max-width: 140px;
                         text-align: center;
                         justify-content: space-around;
@@ -129,7 +130,7 @@
     }
 }
 
-@media (max-width: $small-screen) {
+@media (max-width: $medium-screen) {
     .container{
         .list{
             .card{
@@ -187,13 +188,13 @@
                             border: 1px solid var(--theme-light);
                             padding: 2px 5px;
                             margin: 5px 10px;
-                            min-width: 120px;
-                            min-height: 160px;
+                            min-width: 140px;
+                            min-height: 220px;
                             text-align: center;
                             justify-content: space-around;
     
                             .artForms{
-                                font-size: var(--font-size-m);
+                                font-size: var(--font-size-s);
                                 font-weight: var(--font-weight-light);
                             }
     
@@ -217,6 +218,24 @@
                             .projectEmbed{ iframe{ width: 100% } }
     
                             .projectGenre{ margin-bottom: 20px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: $small-screen) {
+    .container{
+        .list{
+            .card{
+                .expand{    
+                    .members{
+                        .member{
+                            min-width: 120px;
+                            min-height: 160px;
                         }
                     }
                 }

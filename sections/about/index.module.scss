@@ -14,50 +14,64 @@
         justify-content: center;
 
         h1{
+            font-family: 'Fjalla One';
+            text-align: center;
             font-size: var(--heading-2-font-size);
-            margin: 0;    
             font-weight: var(--font-weight-normal);
             text-transform: uppercase;
+            margin: 0;
         }
         
     }
 
     .intro{
         h3{
-            font-size: var(--heading-2-font-size);
             font-weight: var(--font-weight-normal);
+            font-size: var(--heading-2-font-size);
             font-family: 'Source Sans Pro';
         }
 
         .container{
             .aboutText{
+                margin: 0;
                 padding: 0 5%;
+
+                p{ font-size: var(--font-size-m) }
             }
 
             .profilePicture{
-                margin-top: 5vh;
-                max-height: 600px;
-                max-width: 50%;
+                justify-self: flex-start;
+                padding-top: 5vh;
+                max-height: var(--profile-picture-max-height);
+                object-fit: cover;
+                object-position: top;
+                height: auto;
             }
         }
     }
 }
 
-@media (max-width: $small-screen) {
+@media(max-width: 1080px){
     .container{
         .intro{
             .container{
                 flex-direction: column-reverse;
 
+                .aboutText{ p { font-size: var(--font-size-s) } }
+
                 .profilePicture{
                     margin-top: none;
-                    max-width: 100%;
+                    width: 80%;
+                    margin: auto;
                 }
             }
 
-            .barContainer{
-                display: none;
-            }
+            .barContainer{ display: none }
         }
     }
+}
+
+
+@media (max-width: 600px) {
+    .container{ .intro{ .container{ .aboutText{ p{ font-size: var(--font-size-l) } } } } }
 }

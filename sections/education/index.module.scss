@@ -2,6 +2,7 @@
 
 .container{
     .list{
+        margin-top: 20px;
         border-left: 1px dashed white;
         
         .card{
@@ -49,7 +50,7 @@
     }
 }
 
-@media (max-width: $small-screen) {
+@media (max-width: $medium-screen) {
     .container{
         .list{        
             .card{
@@ -64,3 +65,4 @@
         }
     }
 }
+

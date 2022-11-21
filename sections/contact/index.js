@@ -2,7 +2,6 @@ import { useState } from "react";
 import Styles from './index.module.scss'
 import {AiFillGithub, AiFillLinkedin, AiFillYoutube, AiFillInstagram} from 'react-icons/ai'
 
-
 function Notification(props) {
     return props.showNotification ? <div className={
         'notification '+ (props.error ? ' error_background' : ' success_background')
@@ -59,7 +58,7 @@ export default function Contact(){
         else{
             setWaiting(true)
             let res = await fetch(
-                'https://ra257dy6pa.execute-api.us-east-2.amazonaws.com/Live/contact',
+                process.env.NEXT_PUBLIC_EMAIL_URL,
                 {
                     method: 'POST',
                     headers: {
