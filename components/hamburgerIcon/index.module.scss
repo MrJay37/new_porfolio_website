@@ -1,0 +1,27 @@
+.container{
+    height: 100%;
+    
+    button{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        height: 20px;
+        width: 25px;
+        margin: auto;
+        background-color: transparent;
+        border: none;
+
+        span{
+            display: block;
+            height: 15%;
+            border-radius: 2rem;
+            width: 100%;
+            background-color: white;
+        }
+    }
+}
+
+.open{
+    transform: rotate(90deg);
+}

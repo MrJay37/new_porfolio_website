@@ -1,6 +1,6 @@
 import Styles from './index.module.scss'
 import EducationData from './data'
-import { formatToYearMonth } from '../../utils'
+import { formatToYearMonth } from '../../lib'
 
 export default function Education() {
     return <div className={Styles.container + ' section'} id="education">

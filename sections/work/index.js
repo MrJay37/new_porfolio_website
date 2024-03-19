@@ -1,7 +1,7 @@
 import Styles from './index.module.scss'
 import Data from './data'
 import { useState } from 'react'
-import { formatToYearMonth } from '../../utils'
+import { formatToYearMonth } from '../../lib'
 import { CardExpand } from '../../components'
 
 function WorkCard(props) {

@@ -1,4 +1,5 @@
 @import './utils.module.scss';
+@import './scrollbar.scss';
 
 // Root settings
 html, body {
@@ -10,21 +11,6 @@ html, body {
 
 * {box-sizing: border-box}
 
-::-webkit-scrollbar { width: 10px }
-
-::-webkit-scrollbar-thumb { background: #777 }
-
-::-webkit-scrollbar-track{ background-color: #111111 }
-
-::-webkit-scrollbar-track-piece{ background-color: #111111 }
-
-::-webkit-scrollbar-corner { background: none }
-
-.success_background{ background-color: green }
-
-.error_background{ background-color: red }
-
-.HeaderMenuDrawer{ display: none }
 
 // Global variables
 :root{
@@ -35,8 +21,6 @@ html, body {
   // Dimensions
   --layout-container-width: 90%;
   --header-height: 60px;
-  --header-width: 98%;
-  --nav-options-margin: 0 20px;
   --vertical-spacing-margin: 30px auto;
   --card-content-padding: 15px 20px;
   --contact-form-input-width: 80%;
@@ -154,14 +138,17 @@ html, body {
   font-size: var(--font-size-xl);
 }
 
+.fullWidth{
+  width: 100%;
+}
+
 @media(max-width: $medium-screen){
   // Global variables
   :root{
     --max-container-width: 1000px;
 
     // Dimensions
-    --header-height: 50px;
-    --nav-options-margin: 0 18px;
+    --header-height: 48px;
     --vertical-spacing-margin: 30px auto;
     --card-content-padding: 15px 20px;
     --contact-form-input-width: 80%;

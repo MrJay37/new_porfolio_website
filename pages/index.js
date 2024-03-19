@@ -1,7 +1,6 @@
 import Head from 'next/head'
-
-
-import { Header, About, Education, Work, Software, Music, Contact } from '../sections'
+import { About, Education, Work, Software, Music, Contact } from '../sections'
+import { Header } from '../components'
 
 
 export default function Home() {
